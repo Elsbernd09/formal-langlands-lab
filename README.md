@@ -1,38 +1,52 @@
 # Formal Langlands Laboratory
 
-Formal Langlands Laboratory is a Lean 4 and GitHub-based mathematical verification project focused on the structures behind the Langlands Program.
+Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, and Langlands-style coefficient correspondences.
 
-The goal is not to claim a complete proof of the Langlands Program. Instead, this repository builds a serious formal framework for studying the objects that appear in modern arithmetic geometry, including arithmetic functions, formal Dirichlet series, L-functions, elliptic curves, modular forms, and correspondence structures.
+## Purpose
+
+The Langlands Program predicts deep relationships between number theory, geometry, harmonic analysis, and representation theory. This repository does not claim to prove the Langlands Program. Instead, it builds a serious formal framework for representing some of the foundational structures that appear in Langlands-style mathematics.
+
+## Current Architecture
+
+The project currently contains:
+
+- Basic number theory definitions
+- Arithmetic functions
+- Multiplicative function prototypes
+- Dirichlet convolution prototypes
+- Formal Dirichlet series
+- Euler product prototypes
+- Coefficient-based correspondence structures
+- Toy correspondence experiments
 
 ## Core Idea
 
-Many different areas of mathematics produce hidden arithmetic data.
+Many mathematical objects generate arithmetic coefficient data.
 
-- Number theory studies primes and divisibility.
-- Elliptic curves produce point-counting data over finite fields.
-- Modular forms produce Fourier coefficients.
-- L-functions package arithmetic data into analytic objects.
-- Langlands-style correspondences predict that objects from different mathematical worlds can secretly encode the same information.
+An L-function can be viewed, at the first formal level, as a structured way of packaging such coefficients.
 
-This repository attempts to formalize these ideas using Lean 4, a theorem prover that checks mathematical logic step by step.
+This project begins with a simplified principle:
 
-## Project Goals
+Two mathematical objects correspond when their coefficient functions agree.
 
-1. Build a formal arithmetic core.
-2. Define arithmetic functions and formal Dirichlet series.
-3. Create prototype L-function structures.
-4. Model simplified elliptic curve data.
-5. Build toy examples of Langlands-style correspondences.
-6. Use GitHub and continuous verification to create a growing mathematical research library.
+Although this is only a toy model, it captures the central philosophical idea that different mathematical worlds can encode the same hidden arithmetic information.
 
-## Tools
+## Lean 4
 
-- Lean 4
-- Mathlib
-- GitHub
-- GitHub Copilot
-- Formal verification
+Lean is a theorem prover and functional programming language. In Lean, definitions and theorems are checked by a computer. This makes the repository not only a set of notes, but a machine-checkable mathematical framework.
+
+## Long-Term Goals
+
+Future versions of this project aim to add:
+
+- More accurate Dirichlet convolution
+- Prime-indexed Euler factors
+- Simplified elliptic curve structures
+- Point-counting prototypes
+- Modular-form-inspired coefficient systems
+- Stronger correspondence theorems
+- A later mathlib-supported version of the project
 
 ## Status
 
-This project is experimental, educational, and research-oriented. It is designed as a serious first step toward understanding and formalizing advanced mathematical structures.
+This project is experimental and educational. It is intended as a serious first step toward formalizing advanced arithmetic structures in Lean.
