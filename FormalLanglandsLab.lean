@@ -21,6 +21,7 @@ import FormalLanglandsLab.Bridge.EulerFactorBridge
 import FormalLanglandsLab.Bridge.PrimeEulerBridge
 import FormalLanglandsLab.Bridge.SpectralArithmeticBridge
 import FormalLanglandsLab.Bridge.MatrixBridge
+import FormalLanglandsLab.Bridge.MatrixEulerFactorBridge
 import FormalLanglandsLab.Experiments.ToyExamples
 import FormalLanglandsLab.EllipticCurves.WeierstrassModels
 import FormalLanglandsLab.EllipticCurves.PointCounting
