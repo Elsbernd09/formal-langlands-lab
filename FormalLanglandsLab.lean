@@ -31,3 +31,4 @@ import FormalLanglandsLab.Galois.FrobeniusTraces
 import FormalLanglandsLab.Galois.GaloisLSeries
 import FormalLanglandsLab.Spectral.SpectralData
 import FormalLanglandsLab.Spectral.SpectralOperators
+import FormalLanglandsLab.Spectral.SpectralLSeries
