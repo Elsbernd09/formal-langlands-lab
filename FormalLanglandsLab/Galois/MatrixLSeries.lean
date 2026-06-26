@@ -1,4 +1,5 @@
 import FormalLanglandsLab.Galois.MatrixRepresentations
+import FormalLanglandsLab.Galois.GaloisLSeries
 import FormalLanglandsLab.LFunctions.FormalDirichletSeries
 
 namespace FormalLanglandsLab
