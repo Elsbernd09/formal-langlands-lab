@@ -4,6 +4,7 @@ import FormalLanglandsLab.Core.MultiplicativeFunctions
 import FormalLanglandsLab.Core.DirichletConvolution
 import FormalLanglandsLab.LFunctions.FormalDirichletSeries
 import FormalLanglandsLab.LFunctions.EulerProductPrototype
+import FormalLanglandsLab.LFunctions.LocalFactors
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
 import FormalLanglandsLab.Bridge.ModularToElliptic
