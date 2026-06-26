@@ -8,3 +8,4 @@ import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Experiments.ToyExamples
 import FormalLanglandsLab.EllipticCurves.WeierstrassModels
 import FormalLanglandsLab.EllipticCurves.PointCounting
+import FormalLanglandsLab.EllipticCurves.EllipticCurveLSeries
