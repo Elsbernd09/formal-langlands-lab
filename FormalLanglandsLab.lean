@@ -8,6 +8,7 @@ import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
 import FormalLanglandsLab.Bridge.ModularToElliptic
 import FormalLanglandsLab.Bridge.HeckeEigenvalueBridge
+import FormalLanglandsLab.Bridge.GaloisModularBridge
 import FormalLanglandsLab.Experiments.ToyExamples
 import FormalLanglandsLab.EllipticCurves.WeierstrassModels
 import FormalLanglandsLab.EllipticCurves.PointCounting
