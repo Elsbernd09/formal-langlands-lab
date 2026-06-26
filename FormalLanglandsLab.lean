@@ -7,3 +7,4 @@ import FormalLanglandsLab.LFunctions.EulerProductPrototype
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Experiments.ToyExamples
 import FormalLanglandsLab.EllipticCurves.WeierstrassModels
+import FormalLanglandsLab.EllipticCurves.PointCounting
