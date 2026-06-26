@@ -13,3 +13,4 @@ import FormalLanglandsLab.EllipticCurves.EllipticCurveLSeries
 import FormalLanglandsLab.ModularForms.QExpansion
 import FormalLanglandsLab.ModularForms.FourierCoefficients
 import FormalLanglandsLab.ModularForms.ModularFormPrototype
+import FormalLanglandsLab.ModularForms.ModularFormLSeries
