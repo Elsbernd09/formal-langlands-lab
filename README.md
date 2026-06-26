@@ -1,6 +1,6 @@
 # Formal Langlands Laboratory
 
-Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, local-global factor systems, and Langlands-style correspondence structures.
+Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, prime-indexed Euler systems, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, local-global factor systems, and Langlands-style correspondence structures.
 
 ## Purpose
 
@@ -14,10 +14,12 @@ The project currently contains:
 - Arithmetic functions
 - Multiplicative function prototypes
 - Dirichlet convolution prototypes
+- Prime index prototypes
 - Formal Dirichlet series
 - Euler product prototypes
 - Local factor systems
 - Local-global compatibility
+- Prime-indexed Euler polynomial systems
 - Simplified elliptic curve models
 - Toy point-counting data
 - Elliptic curve L-series prototypes
@@ -36,6 +38,7 @@ The project currently contains:
 - Modular-to-elliptic coefficient bridge modules
 - Galois-to-modular coefficient bridge modules
 - Euler factor bridge modules
+- Prime Euler bridge modules
 - Toy correspondence experiments
 
 ## Central Idea
@@ -94,6 +97,16 @@ formal L-series → local factor system → local-global compatibility
 
 The bridge modules prove that coefficient agreement between global L-series implies agreement between their local factor systems.
 
+## Prime-Indexed Euler Systems
+
+The prime Euler system layer introduces symbolic prime-like indices and toy Euler polynomials. This models the idea that local Euler factors are attached to prime-indexed arithmetic data.
+
+Pipeline:
+
+formal L-series → prime-indexed Euler polynomial system
+
+The bridge modules prove that coefficient agreement between global L-series implies agreement between their prime-indexed Euler polynomial systems.
+
 ## Toy Langlands Triangle
 
 The project now contains three coefficient-producing worlds:
@@ -102,7 +115,7 @@ The project now contains three coefficient-producing worlds:
 - Modular form prototypes
 - Galois representation prototypes
 
-Each world produces formal L-series data and local factor data. The bridge modules compare these coefficient sequences and local systems.
+Each world produces formal L-series data, local factor data, and prime-indexed Euler polynomial data. The bridge modules compare these coefficient sequences and local systems.
 
 This models the toy Langlands triangle:
 
@@ -117,8 +130,8 @@ Lean is a theorem prover and functional programming language. In Lean, definitio
 Future versions of this project aim to add:
 
 - More accurate Dirichlet convolution
-- Prime-indexed Euler factors
-- Local Euler polynomials
+- Actual primality from mathlib
+- Prime-restricted Euler products
 - Finite-field point-counting prototypes
 - More realistic Hecke operator formulas
 - Matrix-valued Galois representations
