@@ -3,6 +3,7 @@ import FormalLanglandsLab.Core.ArithmeticFunctions
 import FormalLanglandsLab.Core.MultiplicativeFunctions
 import FormalLanglandsLab.Core.DirichletConvolution
 import FormalLanglandsLab.Core.PrimeData
+import FormalLanglandsLab.LinearAlgebra.Matrices
 import FormalLanglandsLab.LFunctions.FormalDirichletSeries
 import FormalLanglandsLab.LFunctions.EulerProductPrototype
 import FormalLanglandsLab.LFunctions.LocalFactors
