@@ -1,6 +1,7 @@
 import FormalLanglandsLab.Core.BasicNumberTheory
 import FormalLanglandsLab.Core.ArithmeticFunctions
 import FormalLanglandsLab.Core.MultiplicativeFunctions
+import FormalLanglandsLab.Core.DirichletConvolution
 import FormalLanglandsLab.LFunctions.FormalDirichletSeries
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Experiments.ToyExamples
