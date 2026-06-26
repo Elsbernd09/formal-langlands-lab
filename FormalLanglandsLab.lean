@@ -10,3 +10,4 @@ import FormalLanglandsLab.Experiments.ToyExamples
 import FormalLanglandsLab.EllipticCurves.WeierstrassModels
 import FormalLanglandsLab.EllipticCurves.PointCounting
 import FormalLanglandsLab.EllipticCurves.EllipticCurveLSeries
+import FormalLanglandsLab.ModularForms.QExpansion
