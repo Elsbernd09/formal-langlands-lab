@@ -1,6 +1,6 @@
 # Formal Langlands Laboratory
 
-Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, prime-indexed Euler systems, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, spectral prototypes, local-global factor systems, and Langlands-style correspondence structures.
+Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, prime-indexed Euler systems, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, matrix-valued representation prototypes, spectral prototypes, local-global factor systems, and Langlands-style correspondence structures.
 
 ## Purpose
 
@@ -15,6 +15,7 @@ The project currently contains:
 - Multiplicative function prototypes
 - Dirichlet convolution prototypes
 - Prime index prototypes
+- 2x2 matrix prototypes
 - Formal Dirichlet series
 - Euler product prototypes
 - Local factor systems
@@ -32,14 +33,18 @@ The project currently contains:
 - Hecke eigenvalue L-series prototypes
 - Galois group prototypes
 - Galois representation prototypes
+- Matrix-valued representation prototypes
 - Frobenius trace systems
 - Galois L-series prototypes
+- Matrix trace L-series prototypes
 - Spectral sequence prototypes
 - Spectral operator prototypes
 - Spectral L-series prototypes
 - Geometry-to-L-function bridge modules
 - Modular-to-elliptic coefficient bridge modules
 - Galois-to-modular coefficient bridge modules
+- Matrix-to-modular bridge modules
+- Matrix-to-spectral bridge modules
 - Euler factor bridge modules
 - Prime Euler bridge modules
 - Spectral-arithmetic bridge modules
@@ -81,15 +86,15 @@ Pipeline:
 
 modular form → Hecke operator → eigenvalue sequence → formal L-series
 
-This models the idea that modular forms are not just coefficient lists, but objects with operator-theoretic structure.
-
-## Galois Representations
+## Galois and Matrix Representations
 
 The Galois layer introduces symbolic Galois group and representation prototypes. A representation produces trace data, which is packaged into a formal L-series.
 
+The matrix representation layer upgrades this by assigning 2x2 matrices to indices and extracting traces and determinants.
+
 Pipeline:
 
-Galois representation → Frobenius trace data → formal L-series
+matrix representation → trace data → formal L-series
 
 ## Local-Global Euler Factors
 
@@ -98,8 +103,6 @@ The local-global layer models the idea that global L-series data can be decompos
 Pipeline:
 
 formal L-series → local factor system → local-global compatibility
-
-The bridge modules prove that coefficient agreement between global L-series implies agreement between their local factor systems.
 
 ## Prime-Indexed Euler Systems
 
@@ -117,8 +120,6 @@ Pipeline:
 
 spectral operator → eigenvalue sequence → spectral L-series
 
-The spectral-arithmetic bridge compares spectral L-series with elliptic, modular, and Galois L-series.
-
 ## Toy Langlands Web
 
 The project now contains several coefficient-producing worlds:
@@ -126,13 +127,14 @@ The project now contains several coefficient-producing worlds:
 - Elliptic curve prototypes
 - Modular form prototypes
 - Galois representation prototypes
+- Matrix representation prototypes
 - Spectral sequence prototypes
 
-Each world produces formal L-series data, local factor data, or spectral data. The bridge modules compare these coefficient sequences and local systems.
+Each world produces formal L-series data, local factor data, matrix trace data, or spectral data. The bridge modules compare these coefficient sequences and local systems.
 
 This models a toy Langlands-style web:
 
-elliptic curves ↔ modular forms ↔ Galois representations ↔ spectral systems
+elliptic curves ↔ modular forms ↔ Galois representations ↔ matrix representations ↔ spectral systems
 
 ## Lean 4
 
@@ -147,8 +149,8 @@ Future versions of this project aim to add:
 - Prime-restricted Euler products
 - Finite-field point-counting prototypes
 - More realistic Hecke operator formulas
-- Matrix-valued Galois representations
-- Matrix-based spectral operators
+- Matrix multiplication
+- Characteristic polynomial prototypes
 - Eigenvalue multiplicativity
 - Stronger correspondence theorems
 - A later mathlib-supported version of the project
