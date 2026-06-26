@@ -6,6 +6,7 @@ import FormalLanglandsLab.LFunctions.FormalDirichletSeries
 import FormalLanglandsLab.LFunctions.EulerProductPrototype
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
+import FormalLanglandsLab.Bridge.ModularToElliptic
 import FormalLanglandsLab.Experiments.ToyExamples
 import FormalLanglandsLab.EllipticCurves.WeierstrassModels
 import FormalLanglandsLab.EllipticCurves.PointCounting
