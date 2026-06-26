@@ -16,7 +16,7 @@ def curveEquation
 
 def toyCurve : WeierstrassCurve where
   a := 2
-  b := 3
+  b := 1
 
 def toyPoint : AffinePoint where
   x := 1
