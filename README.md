@@ -1,10 +1,10 @@
 # Formal Langlands Laboratory
 
-Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, and Langlands-style correspondence structures.
+Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, and Langlands-style correspondence structures.
 
 ## Purpose
 
-The Langlands Program predicts deep relationships between number theory, geometry, harmonic analysis, and representation theory. This repository does not claim to prove the Langlands Program. Instead, it builds a formal framework for representing foundational structures that appear in Langlands-style mathematics.
+The Langlands Program predicts deep relationships between number theory, geometry, harmonic analysis, representation theory, and arithmetic geometry. This repository does not claim to prove the Langlands Program. Instead, it builds a formal framework for representing foundational structures that appear in Langlands-style mathematics.
 
 ## Current Architecture
 
@@ -26,8 +26,13 @@ The project currently contains:
 - Hecke operator prototypes
 - Eigenform prototypes
 - Hecke eigenvalue L-series prototypes
+- Galois group prototypes
+- Galois representation prototypes
+- Frobenius trace systems
+- Galois L-series prototypes
 - Geometry-to-L-function bridge modules
 - Modular-to-elliptic coefficient bridge modules
+- Galois-to-modular coefficient bridge modules
 - Toy correspondence experiments
 
 ## Central Idea
@@ -68,15 +73,27 @@ modular form → Hecke operator → eigenvalue sequence → formal L-series
 
 This models the idea that modular forms are not just coefficient lists, but objects with operator-theoretic structure.
 
-## Toy Modularity Bridge
+## Galois Representations
 
-The modular-to-elliptic bridge compares elliptic curve L-series coefficients with modular form L-series coefficients.
+The Galois layer introduces symbolic Galois group and representation prototypes. A representation produces trace data, which is packaged into a formal L-series.
 
-The current project proves a toy matching theorem by constructing a modular form prototype whose coefficient sequence matches the elliptic curve L-series coefficient sequence.
+Pipeline:
 
-This models the formal shape of the modularity idea:
+Galois representation → Frobenius trace data → formal L-series
 
-elliptic curve coefficients = modular form coefficients
+## Toy Langlands Triangle
+
+The project now contains three coefficient-producing worlds:
+
+- Elliptic curve prototypes
+- Modular form prototypes
+- Galois representation prototypes
+
+Each world produces formal L-series data. The bridge modules compare these coefficient sequences.
+
+This models the toy Langlands triangle:
+
+elliptic curves ↔ modular forms ↔ Galois representations
 
 ## Lean 4
 
@@ -90,6 +107,7 @@ Future versions of this project aim to add:
 - Prime-indexed Euler factors
 - Finite-field point-counting prototypes
 - More realistic Hecke operator formulas
+- Matrix-valued Galois representations
 - Eigenvalue multiplicativity
 - Stronger correspondence theorems
 - A later mathlib-supported version of the project
