@@ -29,3 +29,4 @@ import FormalLanglandsLab.ModularForms.EigenformPrototype
 import FormalLanglandsLab.Galois.GaloisRepresentations
 import FormalLanglandsLab.Galois.FrobeniusTraces
 import FormalLanglandsLab.Galois.GaloisLSeries
+import FormalLanglandsLab.Spectral.SpectralData
