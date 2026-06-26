@@ -3,5 +3,6 @@ import FormalLanglandsLab.Core.ArithmeticFunctions
 import FormalLanglandsLab.Core.MultiplicativeFunctions
 import FormalLanglandsLab.Core.DirichletConvolution
 import FormalLanglandsLab.LFunctions.FormalDirichletSeries
+import FormalLanglandsLab.LFunctions.EulerProductPrototype
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Experiments.ToyExamples
