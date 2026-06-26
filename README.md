@@ -1,10 +1,10 @@
 # Formal Langlands Laboratory
 
-Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, prime-indexed Euler systems, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, local-global factor systems, and Langlands-style correspondence structures.
+Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, prime-indexed Euler systems, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, spectral prototypes, local-global factor systems, and Langlands-style correspondence structures.
 
 ## Purpose
 
-The Langlands Program predicts deep relationships between number theory, geometry, harmonic analysis, representation theory, and arithmetic geometry. This repository does not claim to prove the Langlands Program. Instead, it builds a formal framework for representing foundational structures that appear in Langlands-style mathematics.
+The Langlands Program predicts deep relationships between number theory, geometry, harmonic analysis, representation theory, arithmetic geometry, and spectral theory. This repository does not claim to prove the Langlands Program. Instead, it builds a formal framework for representing foundational structures that appear in Langlands-style mathematics.
 
 ## Current Architecture
 
@@ -34,11 +34,15 @@ The project currently contains:
 - Galois representation prototypes
 - Frobenius trace systems
 - Galois L-series prototypes
+- Spectral sequence prototypes
+- Spectral operator prototypes
+- Spectral L-series prototypes
 - Geometry-to-L-function bridge modules
 - Modular-to-elliptic coefficient bridge modules
 - Galois-to-modular coefficient bridge modules
 - Euler factor bridge modules
 - Prime Euler bridge modules
+- Spectral-arithmetic bridge modules
 - Toy correspondence experiments
 
 ## Central Idea
@@ -105,21 +109,30 @@ Pipeline:
 
 formal L-series → prime-indexed Euler polynomial system
 
-The bridge modules prove that coefficient agreement between global L-series implies agreement between their prime-indexed Euler polynomial systems.
+## Spectral Side
 
-## Toy Langlands Triangle
+The spectral layer introduces toy spectral sequences and spectral operators. A spectral sequence produces eigenvalue data, which can be packaged into a formal L-series.
 
-The project now contains three coefficient-producing worlds:
+Pipeline:
+
+spectral operator → eigenvalue sequence → spectral L-series
+
+The spectral-arithmetic bridge compares spectral L-series with elliptic, modular, and Galois L-series.
+
+## Toy Langlands Web
+
+The project now contains several coefficient-producing worlds:
 
 - Elliptic curve prototypes
 - Modular form prototypes
 - Galois representation prototypes
+- Spectral sequence prototypes
 
-Each world produces formal L-series data, local factor data, and prime-indexed Euler polynomial data. The bridge modules compare these coefficient sequences and local systems.
+Each world produces formal L-series data, local factor data, or spectral data. The bridge modules compare these coefficient sequences and local systems.
 
-This models the toy Langlands triangle:
+This models a toy Langlands-style web:
 
-elliptic curves ↔ modular forms ↔ Galois representations
+elliptic curves ↔ modular forms ↔ Galois representations ↔ spectral systems
 
 ## Lean 4
 
@@ -135,6 +148,7 @@ Future versions of this project aim to add:
 - Finite-field point-counting prototypes
 - More realistic Hecke operator formulas
 - Matrix-valued Galois representations
+- Matrix-based spectral operators
 - Eigenvalue multiplicativity
 - Stronger correspondence theorems
 - A later mathlib-supported version of the project
