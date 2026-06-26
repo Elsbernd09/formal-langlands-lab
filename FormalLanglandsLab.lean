@@ -15,6 +15,7 @@ import FormalLanglandsLab.Bridge.ModularToElliptic
 import FormalLanglandsLab.Bridge.HeckeEigenvalueBridge
 import FormalLanglandsLab.Bridge.GaloisModularBridge
 import FormalLanglandsLab.Bridge.EulerFactorBridge
+import FormalLanglandsLab.Bridge.PrimeEulerBridge
 import FormalLanglandsLab.Experiments.ToyExamples
 import FormalLanglandsLab.EllipticCurves.WeierstrassModels
 import FormalLanglandsLab.EllipticCurves.PointCounting
