@@ -1,6 +1,6 @@
 # Formal Langlands Laboratory
 
-Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, elliptic curve coefficient systems, modular form prototypes, and Langlands-style correspondence structures.
+Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, and Langlands-style correspondence structures.
 
 ## Purpose
 
@@ -23,6 +23,9 @@ The project currently contains:
 - Fourier coefficient systems
 - Modular form prototypes
 - Modular form L-series prototypes
+- Hecke operator prototypes
+- Eigenform prototypes
+- Hecke eigenvalue L-series prototypes
 - Geometry-to-L-function bridge modules
 - Modular-to-elliptic coefficient bridge modules
 - Toy correspondence experiments
@@ -55,6 +58,16 @@ Pipeline:
 
 modular form → q-expansion → Fourier coefficients → formal L-series
 
+## Hecke Operators and Eigenforms
+
+The Hecke layer introduces symmetry operators acting on modular form prototypes.
+
+Pipeline:
+
+modular form → Hecke operator → eigenvalue sequence → formal L-series
+
+This models the idea that modular forms are not just coefficient lists, but objects with operator-theoretic structure.
+
 ## Toy Modularity Bridge
 
 The modular-to-elliptic bridge compares elliptic curve L-series coefficients with modular form L-series coefficients.
@@ -76,8 +89,8 @@ Future versions of this project aim to add:
 - More accurate Dirichlet convolution
 - Prime-indexed Euler factors
 - Finite-field point-counting prototypes
-- Hecke operator prototypes
-- Eigenform prototypes
+- More realistic Hecke operator formulas
+- Eigenvalue multiplicativity
 - Stronger correspondence theorems
 - A later mathlib-supported version of the project
 
