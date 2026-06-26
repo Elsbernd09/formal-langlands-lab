@@ -1,6 +1,6 @@
 # Formal Langlands Laboratory
 
-Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, and Langlands-style correspondence structures.
+Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, local-global factor systems, and Langlands-style correspondence structures.
 
 ## Purpose
 
@@ -16,6 +16,8 @@ The project currently contains:
 - Dirichlet convolution prototypes
 - Formal Dirichlet series
 - Euler product prototypes
+- Local factor systems
+- Local-global compatibility
 - Simplified elliptic curve models
 - Toy point-counting data
 - Elliptic curve L-series prototypes
@@ -33,6 +35,7 @@ The project currently contains:
 - Geometry-to-L-function bridge modules
 - Modular-to-elliptic coefficient bridge modules
 - Galois-to-modular coefficient bridge modules
+- Euler factor bridge modules
 - Toy correspondence experiments
 
 ## Central Idea
@@ -81,6 +84,16 @@ Pipeline:
 
 Galois representation → Frobenius trace data → formal L-series
 
+## Local-Global Euler Factors
+
+The local-global layer models the idea that global L-series data can be decomposed into local factor systems.
+
+Pipeline:
+
+formal L-series → local factor system → local-global compatibility
+
+The bridge modules prove that coefficient agreement between global L-series implies agreement between their local factor systems.
+
 ## Toy Langlands Triangle
 
 The project now contains three coefficient-producing worlds:
@@ -89,7 +102,7 @@ The project now contains three coefficient-producing worlds:
 - Modular form prototypes
 - Galois representation prototypes
 
-Each world produces formal L-series data. The bridge modules compare these coefficient sequences.
+Each world produces formal L-series data and local factor data. The bridge modules compare these coefficient sequences and local systems.
 
 This models the toy Langlands triangle:
 
@@ -105,6 +118,7 @@ Future versions of this project aim to add:
 
 - More accurate Dirichlet convolution
 - Prime-indexed Euler factors
+- Local Euler polynomials
 - Finite-field point-counting prototypes
 - More realistic Hecke operator formulas
 - Matrix-valued Galois representations
