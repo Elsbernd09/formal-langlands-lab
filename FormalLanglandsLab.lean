@@ -12,6 +12,7 @@ import FormalLanglandsLab.LFunctions.LocalGlobalCompatibility
 import FormalLanglandsLab.LFunctions.EulerPolynomials
 import FormalLanglandsLab.LFunctions.PrimeEulerSystem
 import FormalLanglandsLab.LFunctions.DeterminantEulerFactors
+import FormalLanglandsLab.Cohomology.CohomologyGroups
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
 import FormalLanglandsLab.Bridge.ModularToElliptic
