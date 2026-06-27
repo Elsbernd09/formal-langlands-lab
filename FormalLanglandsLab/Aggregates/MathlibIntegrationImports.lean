@@ -32,3 +32,5 @@ import FormalLanglandsLab.MathlibIntegration.V6DivisorTables
 import FormalLanglandsLab.MathlibIntegration.V6CountBridge
 import FormalLanglandsLab.MathlibIntegration.V6ArithmeticFunctionBridge
 import FormalLanglandsLab.MathlibIntegration.V6ArithmeticSummary
+import FormalLanglandsLab.MathlibIntegration.V6HonestTheoremRegistry
+import FormalLanglandsLab.MathlibIntegration.V6Dashboard
