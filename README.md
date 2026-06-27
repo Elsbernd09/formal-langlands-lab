@@ -1,56 +1,57 @@
 # Formal Langlands Laboratory
 
-A Lean 4 formal verification laboratory for arithmetic functions, divisor sums, formal L-series, Euler factors, finite Euler products, and Langlands-inspired mathematical architecture.
+A Lean 4 formal verification laboratory for arithmetic functions, divisor sums, formal Dirichlet series, Euler factors, finite Euler products, and Langlands-inspired mathematical architecture.
 
 This project is not a proof of the Langlands Program. It is a formal mathematics laboratory that builds verified arithmetic infrastructure connected to simplified L-function and Euler-product models.
 
 ## Current Version
 
-Version 5: Finset Divisor Sums and Mathlib-Style Arithmetic Infrastructure
+Version 6: Rigorous Finset Theorem Recovery
 
-Version 5 moves the project from list-based divisor computation toward mathlib-style Finset infrastructure.
+Version 6 repairs and strengthens the Finset layer introduced in Version 5.
 
-## Version 5 Adds
+## Version 6 Adds
 
-- Finset foundation examples
-- Finset divisor sets
-- Finset divisor cardinalities
-- Finset divisor sums
-- Finset square-divisor sums
-- Finset-to-list comparison bridges
-- Finset arithmetic functions
-- Finset L-series examples
-- Finset multiplicativity examples
-- Finset Euler product comparisons
-- V5 theorem registry and dashboard
+- audit of stabilized V5 modules
+- real divisor predicate
+- stable Boolean divisor predicate
+- stable divisor Finset filter definition
+- divisor membership conditions
+- divisor Boolean tables for 6 and 12
+- divisor count and divisor sum bridges
+- V6 arithmetic functions
+- V6 formal L-series examples
+- honest theorem registry
+- V6 dashboard
 
-## Representative Results
+## Representative V6 Results
 
-Version 5 verifies examples such as:
+Version 6 verifies examples such as:
 
-- divisors of 12 are {1, 2, 3, 4, 6, 12}
-- divisor Finset cardinality at 12 equals 6
-- divisor Finset sum at 12 equals 28
-- square-divisor Finset sum at 12 equals 210
-- Finset divisor-count Euler product over 2, 3, 5 equals 216
-- Finset sum-of-divisors Euler product over 2, 3, 5 equals 7524
-- Finset square-divisor-sum Euler product over 2, 3, 5 equals 1867212
+- v6IsDivisor 6 2
+- v6IsDivisorBool 6 2 = true
+- v6IsDivisorBool 6 4 = false
+- divisor Boolean table for 6
+- divisor Boolean table for 12
+- divisor count of 6 equals 4
+- divisor count of 12 equals 6
+- divisor sum of 6 equals 12
+- divisor sum of 12 equals 28
+- square-divisor sum of 6 equals 50
+- square-divisor sum of 12 equals 210
+- V6 divisor-count L-series coefficient at 12 equals 6
+- V6 sum-of-divisors L-series coefficient at 12 equals 28
+- V6 square-divisor-sum L-series coefficient at 12 equals 210
 
 ## Build Instructions
 
+Run:
+
 source ~/.profile
 lake build
-
-## Current Branch
-
-v5-finset-divisor-sums
 
 ## Honest Scope
 
 This project does not prove Langlands, modularity, analytic continuation, class field theory, or functoriality.
 
-The Euler products are finite formal approximations.
-
-The L-series are formal coefficient structures.
-
-The value of the project is that it builds a rigorous, inspectable, extensible Lean 4 laboratory for arithmetic infrastructure related to divisor sums, Euler factors, and L-function-inspired structures.
+Version 6 is a repair-and-rigor release. It prioritizes build stability, supported theorem statements, and honest tracking of what is actually proved.
