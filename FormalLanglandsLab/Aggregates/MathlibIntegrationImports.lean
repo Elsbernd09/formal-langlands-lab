@@ -25,3 +25,4 @@ import FormalLanglandsLab.MathlibIntegration.FinsetMultiplicativityExamples
 import FormalLanglandsLab.MathlibIntegration.FinsetEulerProductExamples
 import FormalLanglandsLab.MathlibIntegration.V5TheoremRegistry
 import FormalLanglandsLab.MathlibIntegration.V5Dashboard
+import FormalLanglandsLab.MathlibIntegration.V6Audit
