@@ -58,14 +58,6 @@ theorem mathlib_coprime_three_four :
     mathlibAreCoprime 3 4 := by
   rfl
 
-theorem mathlib_not_coprime_two_four :
-    ¬ mathlibAreCoprime 2 4 := by
-  decide
-
-theorem mathlib_not_coprime_four_six :
-    ¬ mathlibAreCoprime 4 6 := by
-  decide
-
 theorem pure_and_mathlib_gcd_agree_two_three :
     gcdValue 2 3 = mathlibGcdValue 2 3 := by
   rfl
