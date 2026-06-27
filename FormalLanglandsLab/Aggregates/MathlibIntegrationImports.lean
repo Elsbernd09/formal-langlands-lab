@@ -3,3 +3,4 @@ import FormalLanglandsLab.MathlibIntegration.Divisibility
 import FormalLanglandsLab.MathlibIntegration.PrimeInfrastructure
 import FormalLanglandsLab.MathlibIntegration.GcdCoprimality
 import FormalLanglandsLab.MathlibIntegration.MathlibMultiplicativity
+import FormalLanglandsLab.MathlibIntegration.PrimeIndexedEuler
