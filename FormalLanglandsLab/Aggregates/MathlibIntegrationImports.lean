@@ -7,3 +7,5 @@ import FormalLanglandsLab.MathlibIntegration.PrimeIndexedEuler
 import FormalLanglandsLab.MathlibIntegration.PrimeListEulerProducts
 import FormalLanglandsLab.MathlibIntegration.DivisorLists
 import FormalLanglandsLab.MathlibIntegration.DivisorTables
+import FormalLanglandsLab.MathlibIntegration.MathlibArithmeticExamples
+import FormalLanglandsLab.MathlibIntegration.MathlibLSeriesExamples
