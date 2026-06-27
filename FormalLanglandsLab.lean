@@ -37,6 +37,7 @@ import FormalLanglandsLab.Bridge.CohomologyBridge
 import FormalLanglandsLab.Bridge.MotiveBridge
 import FormalLanglandsLab.Bridge.FunctorialBridge
 import FormalLanglandsLab.Bridge.CategoricalBridge
+import FormalLanglandsLab.Bridge.NaturalTransformationBridge
 import FormalLanglandsLab.Experiments.ToyExamples
 import FormalLanglandsLab.EllipticCurves.WeierstrassModels
 import FormalLanglandsLab.EllipticCurves.PointCounting
