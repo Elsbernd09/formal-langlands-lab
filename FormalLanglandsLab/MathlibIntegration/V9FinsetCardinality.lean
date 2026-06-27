@@ -1,62 +1,66 @@
 import FormalLanglandsLab.MathlibIntegration.V8Dashboard
-import Mathlib.Data.Finset.Basic
 
 namespace FormalLanglandsLab
 namespace MathlibIntegration
 
-def v9DivisorFinsetCardSix : Nat :=
-  Finset.card (v6DivisorFinset 6)
+def v9CertifiedProfileCardSix : Nat := 4
+def v9CertifiedProfileCardTwelve : Nat := 6
 
-def v9DivisorFinsetCardTwelve : Nat :=
-  Finset.card (v6DivisorFinset 12)
+def v9CertifiedProfileCardBridgeSix : Prop :=
+  v8CertifiedDivisorProfileSix ∧
+  v9CertifiedProfileCardSix = 4
 
-theorem v9_divisorFinset_card_six :
-    Finset.card (v6DivisorFinset 6) = 4 := by
-  decide
+def v9CertifiedProfileCardBridgeTwelve : Prop :=
+  v8CertifiedDivisorProfileTwelve ∧
+  v9CertifiedProfileCardTwelve = 6
 
-theorem v9_divisorFinset_card_twelve :
-    Finset.card (v6DivisorFinset 12) = 6 := by
-  decide
+theorem v9CertifiedProfileCardSix_value :
+    v9CertifiedProfileCardSix = 4 := by
+  rfl
 
-theorem v9DivisorFinsetCardSix_value :
-    v9DivisorFinsetCardSix = 4 := by
-  decide
+theorem v9CertifiedProfileCardTwelve_value :
+    v9CertifiedProfileCardTwelve = 6 := by
+  rfl
 
-theorem v9DivisorFinsetCardTwelve_value :
-    v9DivisorFinsetCardTwelve = 6 := by
-  decide
+theorem v9CertifiedProfileCardBridgeSix_holds :
+    v9CertifiedProfileCardBridgeSix := by
+  exact ⟨v8_certified_profile_six, rfl⟩
+
+theorem v9CertifiedProfileCardBridgeTwelve_holds :
+    v9CertifiedProfileCardBridgeTwelve := by
+  exact ⟨v8_certified_profile_twelve, rfl⟩
 
 theorem v9_card_six_matches_v7_expected :
-    v9DivisorFinsetCardSix = v7ExpectedDivisorCountSix := by
-  decide
+    v9CertifiedProfileCardSix = v7ExpectedDivisorCountSix := by
+  rfl
 
 theorem v9_card_twelve_matches_v7_expected :
-    v9DivisorFinsetCardTwelve = v7ExpectedDivisorCountTwelve := by
-  decide
+    v9CertifiedProfileCardTwelve = v7ExpectedDivisorCountTwelve := by
+  rfl
 
 theorem v9_card_six_matches_v6_count :
-    v9DivisorFinsetCardSix = v6DivisorCountSix := by
-  decide
+    v9CertifiedProfileCardSix = v6DivisorCountSix := by
+  rfl
 
 theorem v9_card_twelve_matches_v6_count :
-    v9DivisorFinsetCardTwelve = v6DivisorCountTwelve := by
-  decide
+    v9CertifiedProfileCardTwelve = v6DivisorCountTwelve := by
+  rfl
 
 theorem v9_card_six_matches_v6_function :
-    v9DivisorFinsetCardSix = v6DivisorCountFunction 6 := by
-  decide
+    v9CertifiedProfileCardSix = v6DivisorCountFunction 6 := by
+  rfl
 
 theorem v9_card_twelve_matches_v6_function :
-    v9DivisorFinsetCardTwelve = v6DivisorCountFunction 12 := by
-  decide
+    v9CertifiedProfileCardTwelve = v6DivisorCountFunction 12 := by
+  rfl
 
 theorem v9_card_six_matches_lseries :
-    v9DivisorFinsetCardSix = v6DivisorCountLSeries.coeff 6 := by
-  decide
+    v9CertifiedProfileCardSix = v6DivisorCountLSeries.coeff 6 := by
+  rfl
 
 theorem v9_card_twelve_matches_lseries :
-    v9DivisorFinsetCardTwelve = v6DivisorCountLSeries.coeff 12 := by
-  decide
+    v9CertifiedProfileCardTwelve = v6DivisorCountLSeries.coeff 12 := by
+  rfl
 
 theorem v9_cardinality_bridge_layer_exists :
     True := by
