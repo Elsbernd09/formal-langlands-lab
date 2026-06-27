@@ -1,160 +1,114 @@
 # Formal Langlands Laboratory
 
-Formal Langlands Laboratory is a Lean 4 formal verification project exploring arithmetic functions, formal Dirichlet series, L-functions, Euler product prototypes, prime-indexed Euler systems, elliptic curve coefficient systems, modular form prototypes, Hecke operator prototypes, eigenform prototypes, Galois representation prototypes, matrix-valued representation prototypes, spectral prototypes, local-global factor systems, and Langlands-style correspondence structures.
+A Lean 4 formal verification laboratory for arithmetic functions, formal L-series, Euler factors, and Langlands-inspired mathematical architecture.
 
-## Purpose
+This project is not a proof of the Langlands Program. It is a formal mathematics laboratory that builds rigorous verified arithmetic infrastructure and connects it to simplified L-function and Euler-product models.
 
-The Langlands Program predicts deep relationships between number theory, geometry, harmonic analysis, representation theory, arithmetic geometry, and spectral theory. This repository does not claim to prove the Langlands Program. Instead, it builds a formal framework for representing foundational structures that appear in Langlands-style mathematics.
+## Current Version
 
-## Current Architecture
+**Version 4: Mathlib Integration**
 
-The project currently contains:
+Version 4 introduces mathlib, Lean's main mathematical library, into the project.
 
-- Basic number theory definitions
-- Arithmetic functions
-- Multiplicative function prototypes
-- Dirichlet convolution prototypes
-- Prime index prototypes
-- 2x2 matrix prototypes
-- Formal Dirichlet series
-- Euler product prototypes
-- Local factor systems
-- Local-global compatibility
-- Prime-indexed Euler polynomial systems
-- Simplified elliptic curve models
-- Toy point-counting data
-- Elliptic curve L-series prototypes
-- q-expansion prototypes
-- Fourier coefficient systems
-- Modular form prototypes
-- Modular form L-series prototypes
-- Hecke operator prototypes
-- Eigenform prototypes
-- Hecke eigenvalue L-series prototypes
-- Galois group prototypes
-- Galois representation prototypes
-- Matrix-valued representation prototypes
-- Frobenius trace systems
-- Galois L-series prototypes
-- Matrix trace L-series prototypes
-- Spectral sequence prototypes
-- Spectral operator prototypes
-- Spectral L-series prototypes
-- Geometry-to-L-function bridge modules
-- Modular-to-elliptic coefficient bridge modules
-- Galois-to-modular coefficient bridge modules
-- Matrix-to-modular bridge modules
-- Matrix-to-spectral bridge modules
-- Euler factor bridge modules
-- Prime Euler bridge modules
-- Spectral-arithmetic bridge modules
-- Toy correspondence experiments
+Earlier versions were built in pure Lean for stability. Version 4 begins connecting the project's arithmetic core to real mathlib-backed number theory.
 
-## Central Idea
+## Main Project Layers
 
-Many mathematical objects generate arithmetic coefficient data.
+The project currently includes:
 
-An L-function can be viewed, at the first formal level, as a structured way of packaging such coefficients.
+- pure Lean arithmetic-function infrastructure
+- verified divisor-sum computations
+- classical arithmetic functions
+- coprimality and multiplicativity tests
+- Euler factor approximations
+- formal Dirichlet series examples
+- mathlib-backed primality
+- mathlib-backed divisibility
+- mathlib gcd and coprimality bridge
+- mathlib prime-indexed Euler factors
+- mathlib prime-list Euler products
+- mathlib divisor lists and divisor tables
+- mathlib-backed arithmetic function examples
+- mathlib-backed L-series examples
+- theorem registries and dashboards
 
-This project begins with a simplified principle:
+## Version 4 Highlights
 
-Two mathematical objects correspond when their coefficient functions agree.
+Version 4 adds:
 
-Although this is only a toy model, it captures the central philosophical idea that different mathematical worlds can encode the same hidden arithmetic information.
+### Mathlib Prime Infrastructure
 
-## Geometry to Arithmetic
+The project defines prime indices carrying actual mathlib proofs of primality.
 
-The elliptic curve layer demonstrates how a geometric object can produce arithmetic data. A simplified elliptic curve generates toy point-counting coefficients, which are then packaged into a formal L-series.
+Examples include:
 
-Pipeline:
+- 2 is prime
+- 3 is prime
+- 5 is prime
+- 7 is prime
+- 11 is prime
 
-elliptic curve → coefficient data → formal L-series
+### Mathlib Divisibility
 
-## Modular Forms to L-functions
+The project defines mathlib-backed divisibility checks and verifies examples such as:
 
-The modular forms layer demonstrates how a modular-form-like object can produce coefficient data through a q-expansion.
+- 2 divides 6
+- 3 divides 12
+- 5 divides 25
+- 2 does not divide 5
+- 3 does not divide 10
 
-Pipeline:
+### Mathlib GCD and Coprimality Bridge
 
-modular form → q-expansion → Fourier coefficients → formal L-series
+The project connects its pure Lean gcd/coprimality infrastructure to a mathlib-backed gcd/coprimality layer.
 
-## Hecke Operators and Eigenforms
+### Mathlib Prime-Indexed Euler Factors
 
-The Hecke layer introduces symmetry operators acting on modular form prototypes.
+The project defines local Euler factor approximations indexed by prime objects that carry mathlib primality proofs.
 
-Pipeline:
+### Prime-List Euler Product Folds
 
-modular form → Hecke operator → eigenvalue sequence → formal L-series
+The project defines finite Euler products by mapping local Euler factors over lists of mathlib-backed prime indices and folding by multiplication.
 
-## Galois and Matrix Representations
+### Mathlib Divisor Lists
 
-The Galois layer introduces symbolic Galois group and representation prototypes. A representation produces trace data, which is packaged into a formal L-series.
+The project constructs divisor lists using mathlib-backed divisibility.
 
-The matrix representation layer upgrades this by assigning 2x2 matrices to indices and extracting traces and determinants.
+Verified examples include:
 
-Pipeline:
+- divisors of 1 are [1]
+- divisors of 2 are [1, 2]
+- divisors of 4 are [1, 2, 4]
+- divisors of 6 are [1, 2, 3, 6]
+- divisors of 12 are [1, 2, 3, 4, 6, 12]
 
-matrix representation → trace data → formal L-series
+### Mathlib-Backed Arithmetic Functions
 
-## Local-Global Euler Factors
+The project defines arithmetic functions from mathlib divisor lists:
 
-The local-global layer models the idea that global L-series data can be decomposed into local factor systems.
+- mathlib divisor-count function
+- mathlib sum-of-divisors function
 
-Pipeline:
+These are compared against the existing verified arithmetic functions.
 
-formal L-series → local factor system → local-global compatibility
+### Mathlib L-Series Examples
 
-## Prime-Indexed Euler Systems
+The project packages mathlib-backed arithmetic functions into formal Dirichlet series examples.
 
-The prime Euler system layer introduces symbolic prime-like indices and toy Euler polynomials. This models the idea that local Euler factors are attached to prime-indexed arithmetic data.
+## Representative Verified Results
 
-Pipeline:
+The project verifies examples such as:
 
-formal L-series → prime-indexed Euler polynomial system
+- divisor count at 12 equals 6
+- sum of divisors at 12 equals 28
+- divisor-count finite Euler product over 2, 3, 5 equals 216
+- sum-of-divisors finite Euler product over 2, 3, 5 equals 7524
+- square-divisor-sum finite Euler product over 2, 3, 5 equals 1867212
 
-## Spectral Side
+## Build Instructions
 
-The spectral layer introduces toy spectral sequences and spectral operators. A spectral sequence produces eigenvalue data, which can be packaged into a formal L-series.
+Install Lean through elan, then run:
 
-Pipeline:
-
-spectral operator → eigenvalue sequence → spectral L-series
-
-## Toy Langlands Web
-
-The project now contains several coefficient-producing worlds:
-
-- Elliptic curve prototypes
-- Modular form prototypes
-- Galois representation prototypes
-- Matrix representation prototypes
-- Spectral sequence prototypes
-
-Each world produces formal L-series data, local factor data, matrix trace data, or spectral data. The bridge modules compare these coefficient sequences and local systems.
-
-This models a toy Langlands-style web:
-
-elliptic curves ↔ modular forms ↔ Galois representations ↔ matrix representations ↔ spectral systems
-
-## Lean 4
-
-Lean is a theorem prover and functional programming language. In Lean, definitions and theorems are checked by a computer. This makes the repository not only a set of notes, but a machine-checkable mathematical framework.
-
-## Long-Term Goals
-
-Future versions of this project aim to add:
-
-- More accurate Dirichlet convolution
-- Actual primality from mathlib
-- Prime-restricted Euler products
-- Finite-field point-counting prototypes
-- More realistic Hecke operator formulas
-- Matrix multiplication
-- Characteristic polynomial prototypes
-- Eigenvalue multiplicativity
-- Stronger correspondence theorems
-- A later mathlib-supported version of the project
-
-## Status
-
-This project is experimental and educational. It is intended as a serious first step toward formalizing advanced arithmetic structures in Lean.
+```bash
+source ~/.profile
+lake build
