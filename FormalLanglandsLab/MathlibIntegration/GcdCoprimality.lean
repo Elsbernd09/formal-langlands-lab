@@ -10,13 +10,13 @@ def mathlibGcdValue
     (a b : Nat) : Nat :=
   Nat.gcd a b
 
-def mathlibCoprimeBool
-    (a b : Nat) : Bool :=
-  decide (Nat.Coprime a b)
-
 def mathlibAreCoprime
     (a b : Nat) : Prop :=
-  Nat.Coprime a b
+  mathlibGcdValue a b = 1
+
+def mathlibCoprimeBool
+    (a b : Nat) : Bool :=
+  mathlibGcdValue a b == 1
 
 theorem mathlib_gcd_two_three :
     mathlibGcdValue 2 3 = 1 := by
@@ -52,11 +52,11 @@ theorem mathlib_coprimeBool_four_six :
 
 theorem mathlib_coprime_two_three :
     mathlibAreCoprime 2 3 := by
-  decide
+  rfl
 
 theorem mathlib_coprime_three_four :
     mathlibAreCoprime 3 4 := by
-  decide
+  rfl
 
 theorem mathlib_not_coprime_two_four :
     ¬ mathlibAreCoprime 2 4 := by

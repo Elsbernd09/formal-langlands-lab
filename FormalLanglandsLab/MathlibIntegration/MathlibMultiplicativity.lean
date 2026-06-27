@@ -10,7 +10,7 @@ open FormalLanglandsLab.NumberTheory
 def mathlibCoprimeMultiplicativePairProperty
     (f : ArithmeticFunction Nat)
     (a b : Nat) : Prop :=
-  Nat.Coprime a b →
+  mathlibAreCoprime a b →
     f (a * b) = f a * f b
 
 def mathlibCoprimeMultiplicativePairTest
