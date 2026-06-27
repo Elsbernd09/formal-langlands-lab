@@ -25,77 +25,69 @@ theorem v19_equality_consequences_twelve :
     v17_universal_membership_agreement_twelve
   ⟩
 
-theorem v19_six_card_transfer :
-    (v6DivisorFinset 6).card = v10ExpectedDivisorsSix.card := by
-  rw [v16_finset_equality_six]
+theorem v19_six_membership_transfer_forward
+    {d : Nat}
+    (h : d ∈ v6DivisorFinset 6) :
+    d ∈ v10ExpectedDivisorsSix := by
+  exact (v15_universal_membership_agreement_six d).mp h
 
-theorem v19_twelve_card_transfer :
-    (v6DivisorFinset 12).card = v10ExpectedDivisorsTwelve.card := by
-  rw [v18_finset_equality_twelve]
+theorem v19_six_membership_transfer_backward
+    {d : Nat}
+    (h : d ∈ v10ExpectedDivisorsSix) :
+    d ∈ v6DivisorFinset 6 := by
+  exact (v15_universal_membership_agreement_six d).mpr h
 
-theorem v19_six_sum_transfer :
-    (v6DivisorFinset 6).sum (fun d => d) =
-      v10ExpectedDivisorsSix.sum (fun d => d) := by
-  rw [v16_finset_equality_six]
+theorem v19_twelve_membership_transfer_forward
+    {d : Nat}
+    (h : d ∈ v6DivisorFinset 12) :
+    d ∈ v10ExpectedDivisorsTwelve := by
+  exact (v17_universal_membership_agreement_twelve d).mp h
 
-theorem v19_twelve_sum_transfer :
-    (v6DivisorFinset 12).sum (fun d => d) =
-      v10ExpectedDivisorsTwelve.sum (fun d => d) := by
-  rw [v18_finset_equality_twelve]
+theorem v19_twelve_membership_transfer_backward
+    {d : Nat}
+    (h : d ∈ v10ExpectedDivisorsTwelve) :
+    d ∈ v6DivisorFinset 12 := by
+  exact (v17_universal_membership_agreement_twelve d).mpr h
 
-theorem v19_six_square_sum_transfer :
-    (v6DivisorFinset 6).sum (fun d => d * d) =
-      v10ExpectedDivisorsSix.sum (fun d => d * d) := by
-  rw [v16_finset_equality_six]
+def v19MembershipTransferPackageSix : Prop :=
+  (∀ d : Nat, d ∈ v6DivisorFinset 6 → d ∈ v10ExpectedDivisorsSix) ∧
+  (∀ d : Nat, d ∈ v10ExpectedDivisorsSix → d ∈ v6DivisorFinset 6)
 
-theorem v19_twelve_square_sum_transfer :
-    (v6DivisorFinset 12).sum (fun d => d * d) =
-      v10ExpectedDivisorsTwelve.sum (fun d => d * d) := by
-  rw [v18_finset_equality_twelve]
-
-def v19ArithmeticTransferPackageSix : Prop :=
-  (v6DivisorFinset 6).card = v10ExpectedDivisorsSix.card ∧
-  (v6DivisorFinset 6).sum (fun d => d) =
-      v10ExpectedDivisorsSix.sum (fun d => d) ∧
-  (v6DivisorFinset 6).sum (fun d => d * d) =
-      v10ExpectedDivisorsSix.sum (fun d => d * d)
-
-def v19ArithmeticTransferPackageTwelve : Prop :=
-  (v6DivisorFinset 12).card = v10ExpectedDivisorsTwelve.card ∧
-  (v6DivisorFinset 12).sum (fun d => d) =
-      v10ExpectedDivisorsTwelve.sum (fun d => d) ∧
-  (v6DivisorFinset 12).sum (fun d => d * d) =
-      v10ExpectedDivisorsTwelve.sum (fun d => d * d)
-
-theorem v19_arithmetic_transfer_package_six :
-    v19ArithmeticTransferPackageSix := by
+theorem v19_membership_transfer_package_six :
+    v19MembershipTransferPackageSix := by
   exact ⟨
-    v19_six_card_transfer,
-    v19_six_sum_transfer,
-    v19_six_square_sum_transfer
+    fun d h => v19_six_membership_transfer_forward h,
+    fun d h => v19_six_membership_transfer_backward h
   ⟩
 
-theorem v19_arithmetic_transfer_package_twelve :
-    v19ArithmeticTransferPackageTwelve := by
+def v19MembershipTransferPackageTwelve : Prop :=
+  (∀ d : Nat, d ∈ v6DivisorFinset 12 → d ∈ v10ExpectedDivisorsTwelve) ∧
+  (∀ d : Nat, d ∈ v10ExpectedDivisorsTwelve → d ∈ v6DivisorFinset 12)
+
+theorem v19_membership_transfer_package_twelve :
+    v19MembershipTransferPackageTwelve := by
   exact ⟨
-    v19_twelve_card_transfer,
-    v19_twelve_sum_transfer,
-    v19_twelve_square_sum_transfer
+    fun d h => v19_twelve_membership_transfer_forward h,
+    fun d h => v19_twelve_membership_transfer_backward h
   ⟩
 
-def v19ArithmeticConsequencesPackage : Prop :=
+def v19EqualityAndMembershipPackage : Prop :=
   v19EqualityConsequencesSix ∧
   v19EqualityConsequencesTwelve ∧
-  v19ArithmeticTransferPackageSix ∧
-  v19ArithmeticTransferPackageTwelve
+  v19MembershipTransferPackageSix ∧
+  v19MembershipTransferPackageTwelve
 
-theorem v19_arithmetic_consequences_package :
-    v19ArithmeticConsequencesPackage := by
+theorem v19_equality_and_membership_package :
+    v19EqualityAndMembershipPackage := by
   exact ⟨
     v19_equality_consequences_six,
-    v19_equality_consequences_twelve,
-    v19_arithmetic_transfer_package_six,
-    v19_arithmetic_transfer_package_twelve
+    ⟨
+      v19_equality_consequences_twelve,
+      ⟨
+        v19_membership_transfer_package_six,
+        v19_membership_transfer_package_twelve
+      ⟩
+    ⟩
   ⟩
 
 theorem v19_arithmetic_consequences_layer_exists :
