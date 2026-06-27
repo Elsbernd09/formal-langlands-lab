@@ -27,3 +27,4 @@ import FormalLanglandsLab.MathlibIntegration.V5TheoremRegistry
 import FormalLanglandsLab.MathlibIntegration.V5Dashboard
 import FormalLanglandsLab.MathlibIntegration.V6Audit
 import FormalLanglandsLab.MathlibIntegration.V6RealDivisorFinsets
+import FormalLanglandsLab.MathlibIntegration.V6DivisorMembershipConditions
