@@ -48,3 +48,5 @@ import FormalLanglandsLab.MathlibIntegration.V8Dashboard
 import FormalLanglandsLab.MathlibIntegration.V9FinsetCardinality
 import FormalLanglandsLab.MathlibIntegration.V9ProfileDivisorSumBridge
 import FormalLanglandsLab.MathlibIntegration.V9FinsetSumBridge
+import FormalLanglandsLab.MathlibIntegration.V9TheoremRegistry
+import FormalLanglandsLab.MathlibIntegration.V9Dashboard
