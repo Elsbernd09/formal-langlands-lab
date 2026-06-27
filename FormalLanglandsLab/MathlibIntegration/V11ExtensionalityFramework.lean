@@ -52,15 +52,22 @@ theorem v11_pointwise_six_four :
     v11PointwiseAgreement (v6DivisorFinset 6) v10ExpectedDivisorsSix 4 := by
   exact v10_membership_agreement_six_four
 
+theorem v11_five_not_mem_divisorFinset_six :
+    5 ∉ v6DivisorFinset 6 := by
+  apply v8_bool_false_not_mem
+  rfl
+
+theorem v11_five_not_mem_expected_six :
+    5 ∉ v10ExpectedDivisorsSix := by
+  decide
+
 theorem v11_pointwise_six_five :
     v11PointwiseAgreement (v6DivisorFinset 6) v10ExpectedDivisorsSix 5 := by
   constructor
   · intro h
-    have hBool : v6IsDivisorBool 6 5 = true :=
-      v7_divisorFinset_member_bool_true h
-    decide at hBool
+    exact False.elim (v11_five_not_mem_divisorFinset_six h)
   · intro h
-    decide at h
+    exact False.elim (v11_five_not_mem_expected_six h)
 
 theorem v11_pointwise_six_six :
     v11PointwiseAgreement (v6DivisorFinset 6) v10ExpectedDivisorsSix 6 := by
