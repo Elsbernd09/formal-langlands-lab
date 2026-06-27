@@ -56,3 +56,4 @@ import FormalLanglandsLab.MathlibIntegration.V10ExpectedArithmeticBridge
 import FormalLanglandsLab.MathlibIntegration.V10TheoremRegistry
 import FormalLanglandsLab.MathlibIntegration.V10Dashboard
 import FormalLanglandsLab.MathlibIntegration.V11ExtensionalityFramework
+import FormalLanglandsLab.MathlibIntegration.V11OutOfRangeFramework
