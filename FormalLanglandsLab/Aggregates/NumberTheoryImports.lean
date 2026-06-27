@@ -4,3 +4,4 @@ import FormalLanglandsLab.NumberTheory.MultiplicativityTests
 import FormalLanglandsLab.NumberTheory.EulerProductVerification
 import FormalLanglandsLab.NumberTheory.Coprimality
 import FormalLanglandsLab.NumberTheory.CoprimeMultiplicativitySuite
+import FormalLanglandsLab.NumberTheory.PrimePowerTables
