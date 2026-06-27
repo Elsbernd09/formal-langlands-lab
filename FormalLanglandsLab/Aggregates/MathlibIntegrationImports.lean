@@ -5,3 +5,5 @@ import FormalLanglandsLab.MathlibIntegration.GcdCoprimality
 import FormalLanglandsLab.MathlibIntegration.MathlibMultiplicativity
 import FormalLanglandsLab.MathlibIntegration.PrimeIndexedEuler
 import FormalLanglandsLab.MathlibIntegration.PrimeListEulerProducts
+import FormalLanglandsLab.MathlibIntegration.DivisorLists
+import FormalLanglandsLab.MathlibIntegration.DivisorTables
