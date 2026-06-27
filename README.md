@@ -6,46 +6,50 @@ This project is not a proof of the Langlands Program. It is a formal mathematics
 
 ## Current Version
 
-Version 9: Certified Profile Cardinality and Summation Bridges
+Version 10: Expected Finset Membership Agreement Layer
 
-Version 9 builds on the certified divisor-correctness layer from Version 8.
+Version 10 builds on the certified profile cardinality and summation bridges from Version 9.
 
-Version 8 connected Boolean divisor predicates, bounded Finset membership, propositional divisor predicates, and certified divisor profiles.
+Version 9 connected certified divisor profiles to cardinality, divisor sums, arithmetic functions, and formal L-series coefficients.
 
-Version 9 connects those certified profiles to cardinality, divisor sums, square-divisor sums, arithmetic functions, and formal L-series coefficients.
+Version 10 introduces canonical expected divisor Finsets and proves pointwise membership agreement between the actual Boolean-filtered divisor Finsets and those expected Finsets.
 
-## Version 9 Adds
+## Version 10 Adds
 
-- certified profile cardinality bridge for 6
-- certified profile cardinality bridge for 12
-- bridges from certified profile cardinalities to V6 divisor-count functions
-- bridges from certified profile cardinalities to divisor-count L-series coefficients
-- certified profile divisor-sum bridge for 6
-- certified profile divisor-sum bridge for 12
-- certified profile square-divisor-sum bridge for 6
-- certified profile square-divisor-sum bridge for 12
-- Finset-style divisor-sum bridge
-- Finset-style square-divisor-sum bridge
+- canonical expected divisor Finset for 6
+- canonical expected divisor Finset for 12
+- expected membership profile for 6
+- expected membership profile for 12
+- actual-vs-expected membership agreement definition
+- pointwise membership agreement for the divisor profile of 6
+- pointwise membership agreement for the divisor profile of 12
+- expected cardinality values
+- expected divisor-sum values
+- expected square-divisor-sum values
+- bridges to V9 certified profile values
 - bridges to V6 arithmetic functions
 - bridges to V6 formal L-series coefficients
-- V9 theorem registry
-- V9 dashboard
+- V10 theorem registry
+- V10 dashboard
 
-## Representative V9 Results
+## Representative V10 Results
 
-Version 9 verifies examples such as:
+Version 10 verifies examples such as:
 
-- certified profile cardinality of 6 equals 4
-- certified profile cardinality of 12 equals 6
-- certified profile divisor sum of 6 equals 12
-- certified profile divisor sum of 12 equals 28
-- certified profile square-divisor sum of 6 equals 50
-- certified profile square-divisor sum of 12 equals 210
-- certified profile cardinality of 12 agrees with the V6 divisor-count function
-- certified profile divisor sum of 12 agrees with the V6 sum-of-divisors function
-- certified profile square-divisor sum of 12 agrees with the V6 square-divisor-sum function
-- Finset-style divisor sum of 12 agrees with the formal L-series coefficient
-- Finset-style square-divisor sum of 12 agrees with the formal L-series coefficient
+- `1 ∈ v10ExpectedDivisorsSix`
+- `4 ∉ v10ExpectedDivisorsSix`
+- `4 ∈ v10ExpectedDivisorsTwelve`
+- `5 ∉ v10ExpectedDivisorsTwelve`
+- actual-vs-expected membership agreement for 2 relative to 6
+- actual-vs-expected membership agreement for 4 relative to 6
+- actual-vs-expected membership agreement for 4 relative to 12
+- actual-vs-expected membership agreement for 5 relative to 12
+- complete actual-vs-expected profile agreement for 6
+- complete actual-vs-expected profile agreement for 12
+- expected divisor sum of 12 equals 28
+- expected square-divisor sum of 12 equals 210
+- expected arithmetic values agree with V6 arithmetic functions
+- expected arithmetic values agree with formal L-series coefficients
 
 ## Build Instructions
 
@@ -58,6 +62,6 @@ lake build
 
 This project does not prove Langlands, modularity, analytic continuation, class field theory, or functoriality.
 
-Version 9 does not yet prove direct `Finset.card` or direct `Finset.sum` theorems over `v6DivisorFinset`.
+Version 10 does not yet prove full Finset equality between the actual divisor Finset and expected divisor Finset.
 
-It creates stable certified profile cardinality and summation bridges that prepare the project for those direct theorems later.
+It proves pointwise membership agreement over the complete tested profiles for 6 and 12 and builds expected arithmetic bridges.
