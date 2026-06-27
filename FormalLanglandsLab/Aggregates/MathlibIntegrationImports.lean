@@ -11,3 +11,4 @@ import FormalLanglandsLab.MathlibIntegration.MathlibArithmeticExamples
 import FormalLanglandsLab.MathlibIntegration.MathlibLSeriesExamples
 import FormalLanglandsLab.MathlibIntegration.MathlibTheoremRegistry
 import FormalLanglandsLab.MathlibIntegration.MathlibDashboard
+import FormalLanglandsLab.MathlibIntegration.FinsetFoundation
