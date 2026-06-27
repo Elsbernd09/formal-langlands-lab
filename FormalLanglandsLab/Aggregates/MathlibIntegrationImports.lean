@@ -14,3 +14,5 @@ import FormalLanglandsLab.MathlibIntegration.MathlibDashboard
 import FormalLanglandsLab.MathlibIntegration.FinsetFoundation
 import FormalLanglandsLab.MathlibIntegration.FinsetDivisorSets
 import FormalLanglandsLab.MathlibIntegration.FinsetDivisorTables
+import FormalLanglandsLab.MathlibIntegration.FinsetDivisorSums
+import FormalLanglandsLab.MathlibIntegration.FinsetDivisorSumTables
