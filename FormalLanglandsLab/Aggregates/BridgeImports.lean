@@ -14,3 +14,4 @@ import FormalLanglandsLab.Bridge.FunctorialBridge
 import FormalLanglandsLab.Bridge.CategoricalBridge
 import FormalLanglandsLab.Bridge.NaturalTransformationBridge
 import FormalLanglandsLab.Bridge.DerivedBridge
+import FormalLanglandsLab.Bridge.ConvolutionUpgradeBridge
