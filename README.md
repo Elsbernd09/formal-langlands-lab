@@ -6,50 +6,42 @@ This project is not a proof of the Langlands Program. It is a formal mathematics
 
 ## Current Version
 
-Version 10: Expected Finset Membership Agreement Layer
+Version 11: Finset Extensionality Framework
 
-Version 10 builds on the certified profile cardinality and summation bridges from Version 9.
+Version 11 builds on the expected Finset membership-agreement layer from Version 10.
 
-Version 9 connected certified divisor profiles to cardinality, divisor sums, arithmetic functions, and formal L-series coefficients.
+Version 10 introduced canonical expected divisor Finsets and proved pointwise membership agreement between actual divisor Finsets and expected Finsets over tested profiles.
 
-Version 10 introduces canonical expected divisor Finsets and proves pointwise membership agreement between the actual Boolean-filtered divisor Finsets and those expected Finsets.
+Version 11 organizes that agreement into a bounded extensionality framework, adds out-of-range non-membership infrastructure, and packages the results as restricted extensionality statements.
 
-## Version 10 Adds
+## Version 11 Adds
 
-- canonical expected divisor Finset for 6
-- canonical expected divisor Finset for 12
-- expected membership profile for 6
-- expected membership profile for 12
-- actual-vs-expected membership agreement definition
-- pointwise membership agreement for the divisor profile of 6
-- pointwise membership agreement for the divisor profile of 12
-- expected cardinality values
-- expected divisor-sum values
-- expected square-divisor-sum values
-- bridges to V9 certified profile values
-- bridges to V6 arithmetic functions
-- bridges to V6 formal L-series coefficients
-- V10 theorem registry
-- V10 dashboard
+- pointwise agreement definition
+- bounded agreement package for 6
+- bounded agreement package for 12
+- out-of-range non-membership framework
+- concrete out-of-range non-membership examples
+- out-of-range actual-vs-expected agreement examples
+- restricted extensionality package for 6
+- restricted extensionality package for 12
+- V11 theorem registry
+- V11 dashboard
 
-## Representative V10 Results
+## Representative V11 Results
 
-Version 10 verifies examples such as:
+Version 11 verifies examples such as:
 
-- `1 ∈ v10ExpectedDivisorsSix`
-- `4 ∉ v10ExpectedDivisorsSix`
-- `4 ∈ v10ExpectedDivisorsTwelve`
-- `5 ∉ v10ExpectedDivisorsTwelve`
-- actual-vs-expected membership agreement for 2 relative to 6
-- actual-vs-expected membership agreement for 4 relative to 6
-- actual-vs-expected membership agreement for 4 relative to 12
-- actual-vs-expected membership agreement for 5 relative to 12
-- complete actual-vs-expected profile agreement for 6
-- complete actual-vs-expected profile agreement for 12
-- expected divisor sum of 12 equals 28
-- expected square-divisor sum of 12 equals 210
-- expected arithmetic values agree with V6 arithmetic functions
-- expected arithmetic values agree with formal L-series coefficients
+- pointwise agreement for 2 between `v6DivisorFinset 6` and `v10ExpectedDivisorsSix`
+- pointwise agreement for 5 between `v6DivisorFinset 6` and `v10ExpectedDivisorsSix`
+- pointwise agreement for 4 between `v6DivisorFinset 12` and `v10ExpectedDivisorsTwelve`
+- bounded agreement for 6
+- bounded agreement for 12
+- if `6 < d`, then `d ∉ v6DivisorFinset 6`
+- if `12 < d`, then `d ∉ v6DivisorFinset 12`
+- `7 ∉ v6DivisorFinset 6`
+- `13 ∉ v6DivisorFinset 12`
+- restricted extensionality package for 6
+- restricted extensionality package for 12
 
 ## Build Instructions
 
@@ -62,6 +54,6 @@ lake build
 
 This project does not prove Langlands, modularity, analytic continuation, class field theory, or functoriality.
 
-Version 10 does not yet prove full Finset equality between the actual divisor Finset and expected divisor Finset.
+Version 11 does not yet prove full Finset equality between actual and expected divisor Finsets.
 
-It proves pointwise membership agreement over the complete tested profiles for 6 and 12 and builds expected arithmetic bridges.
+It builds the bounded and out-of-range extensionality framework needed before attempting full equality.
