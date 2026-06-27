@@ -6,42 +6,53 @@ This project is not a proof of the Langlands Program. It is a formal mathematics
 
 ## Current Version
 
-Version 12: Universal Membership Agreement Preparation
+Version 13: Strong Out-of-Range Agreement Preparation
 
-Version 12 builds on the Finset extensionality framework from Version 11.
+Version 13 builds on the universal membership-agreement preparation layer from Version 12.
 
-Version 11 organized actual-vs-expected divisor Finset comparison into bounded agreement, out-of-range non-membership, and restricted extensionality packages.
+Version 12 prepared bounded and actual out-of-range ingredients for universal membership agreement.
 
-Version 12 prepares the next step: universal membership agreement for the divisor Finsets of 6 and 12.
+Version 13 strengthens the expected-Finset side by adding expected out-of-range examples, actual-vs-expected out-of-range agreement packages, and bounded-plus-out-of-range preparation structures.
 
-## Version 12 Adds
+## Version 13 Adds
 
-- universal agreement target definition for 6
-- universal agreement preparation package for 6
-- bounded membership-agreement cases for 6
-- concrete out-of-range agreement examples for 6
-- universal agreement target definition for 12
-- universal agreement preparation package for 12
-- bounded membership-agreement cases for 12
-- concrete out-of-range agreement examples for 12
-- V12 theorem registry
-- V12 dashboard
+- expected out-of-range examples for 6
+- expected out-of-range examples for 12
+- expected out-of-range sample package for 6
+- expected out-of-range sample package for 12
+- out-of-range agreement definition for 6
+- out-of-range agreement definition for 12
+- actual-vs-expected out-of-range agreement package for 6
+- actual-vs-expected out-of-range agreement package for 12
+- bounded-plus-out-of-range agreement package for 6
+- bounded-plus-out-of-range agreement package for 12
+- strong agreement preparation package
+- V13 theorem registry
+- V13 dashboard
 
-## Representative V12 Results
+## Representative V13 Results
 
-Version 12 verifies examples such as:
+Version 13 verifies examples such as:
 
-- `0 ∈ v6DivisorFinset 6 ↔ 0 ∈ v10ExpectedDivisorsSix`
-- `2 ∈ v6DivisorFinset 6 ↔ 2 ∈ v10ExpectedDivisorsSix`
-- `5 ∈ v6DivisorFinset 6 ↔ 5 ∈ v10ExpectedDivisorsSix`
-- `7 ∈ v6DivisorFinset 6 ↔ 7 ∈ v10ExpectedDivisorsSix`
-- `8 ∈ v6DivisorFinset 6 ↔ 8 ∈ v10ExpectedDivisorsSix`
-- `0 ∈ v6DivisorFinset 12 ↔ 0 ∈ v10ExpectedDivisorsTwelve`
-- `4 ∈ v6DivisorFinset 12 ↔ 4 ∈ v10ExpectedDivisorsTwelve`
-- `12 ∈ v6DivisorFinset 12 ↔ 12 ∈ v10ExpectedDivisorsTwelve`
-- `13 ∈ v6DivisorFinset 12 ↔ 13 ∈ v10ExpectedDivisorsTwelve`
-- universal agreement preparation for 6
-- universal agreement preparation for 12
+- `7 ∉ v10ExpectedDivisorsSix`
+- `8 ∉ v10ExpectedDivisorsSix`
+- `9 ∉ v10ExpectedDivisorsSix`
+- `10 ∉ v10ExpectedDivisorsSix`
+- `13 ∉ v10ExpectedDivisorsTwelve`
+- `14 ∉ v10ExpectedDivisorsTwelve`
+- `15 ∉ v10ExpectedDivisorsTwelve`
+- `16 ∉ v10ExpectedDivisorsTwelve`
+- `v13OutOfRangeAgreementSix 7`
+- `v13OutOfRangeAgreementSix 8`
+- `v13OutOfRangeAgreementSix 9`
+- `v13OutOfRangeAgreementSix 10`
+- `v13OutOfRangeAgreementTwelve 13`
+- `v13OutOfRangeAgreementTwelve 14`
+- `v13OutOfRangeAgreementTwelve 15`
+- `v13OutOfRangeAgreementTwelve 16`
+- bounded-plus-out-of-range agreement for 6
+- bounded-plus-out-of-range agreement for 12
+- strong agreement preparation
 
 ## Build Instructions
 
@@ -54,6 +65,8 @@ lake build
 
 This project does not prove Langlands, modularity, analytic continuation, class field theory, or functoriality.
 
-Version 12 does not yet prove the final universal membership theorem for all natural numbers.
+Version 13 does not yet prove the final universal membership theorem over all natural numbers.
 
-It prepares the bounded and out-of-range ingredients needed before attempting full universal membership and full Finset equality.
+Version 13 does not yet prove full Finset equality.
+
+It strengthens the expected-side and out-of-range agreement infrastructure needed before attempting those theorems.
