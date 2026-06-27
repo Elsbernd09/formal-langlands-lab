@@ -14,6 +14,7 @@ import FormalLanglandsLab.LFunctions.PrimeEulerSystem
 import FormalLanglandsLab.LFunctions.DeterminantEulerFactors
 import FormalLanglandsLab.Cohomology.CohomologyGroups
 import FormalLanglandsLab.Cohomology.CohomologyLSeries
+import FormalLanglandsLab.Cohomology.EllipticCurveCohomology
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
 import FormalLanglandsLab.Bridge.ModularToElliptic
