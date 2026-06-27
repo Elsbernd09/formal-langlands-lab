@@ -60,3 +60,4 @@ import FormalLanglandsLab.MathlibIntegration.V11OutOfRangeFramework
 import FormalLanglandsLab.MathlibIntegration.V11RestrictedExtensionality
 import FormalLanglandsLab.MathlibIntegration.V11TheoremRegistry
 import FormalLanglandsLab.MathlibIntegration.V11Dashboard
+import FormalLanglandsLab.MathlibIntegration.V12UniversalAgreementSix
