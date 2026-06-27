@@ -6,42 +6,51 @@ This project is not a proof of the Langlands Program. It is a formal mathematics
 
 ## Current Version
 
-Version 6: Rigorous Finset Theorem Recovery
+Version 7: Direct Finset Membership Theorems
 
-Version 6 repairs and strengthens the Finset layer introduced in Version 5.
+Version 7 builds on the stable Version 6 recovery layer.
 
-## Version 6 Adds
+Version 6 repaired the Finset divisor infrastructure by introducing stable Boolean divisor predicates, divisor tables, arithmetic-function bridges, and an honest theorem registry.
 
-- audit of stabilized V5 modules
-- real divisor predicate
-- stable Boolean divisor predicate
-- stable divisor Finset filter definition
-- divisor membership conditions
-- divisor Boolean tables for 6 and 12
-- divisor count and divisor sum bridges
-- V6 arithmetic functions
-- V6 formal L-series examples
-- honest theorem registry
-- V6 dashboard
+Version 7 proves direct membership theorems for the Boolean-filtered divisor Finsets and connects those membership profiles back to divisor sums, arithmetic functions, and formal L-series coefficients.
 
-## Representative V6 Results
+## Version 7 Adds
 
-Version 6 verifies examples such as:
+- direct theorem for membership in `v6DivisorFinset n`
+- extraction theorem for Finset range membership
+- extraction theorem for Boolean divisor truth
+- introduction theorem for divisor Finset membership
+- direct membership examples for `v6DivisorFinset 6`
+- direct non-membership examples for `v6DivisorFinset 6`
+- direct membership examples for `v6DivisorFinset 12`
+- direct non-membership examples for `v6DivisorFinset 12`
+- complete divisor membership profiles for 6 and 12
+- explicit divisor-sum computations from profiles
+- explicit square-divisor-sum computations from profiles
+- bridges from profile sums to V6 arithmetic functions
+- bridges from profile sums to V6 formal L-series
+- V7 theorem registry
+- V7 dashboard
 
-- v6IsDivisor 6 2
-- v6IsDivisorBool 6 2 = true
-- v6IsDivisorBool 6 4 = false
-- divisor Boolean table for 6
-- divisor Boolean table for 12
-- divisor count of 6 equals 4
-- divisor count of 12 equals 6
-- divisor sum of 6 equals 12
-- divisor sum of 12 equals 28
-- square-divisor sum of 6 equals 50
-- square-divisor sum of 12 equals 210
-- V6 divisor-count L-series coefficient at 12 equals 6
-- V6 sum-of-divisors L-series coefficient at 12 equals 28
-- V6 square-divisor-sum L-series coefficient at 12 equals 210
+## Representative V7 Results
+
+Version 7 verifies examples such as:
+
+- `d ∈ v6DivisorFinset n ↔ d ∈ Finset.range (n + 1) ∧ v6IsDivisorBool n d = true`
+- `2 ∈ v6DivisorFinset 6`
+- `4 ∉ v6DivisorFinset 6`
+- `4 ∈ v6DivisorFinset 12`
+- `5 ∉ v6DivisorFinset 12`
+- `12 ∈ v6DivisorFinset 12`
+- complete divisor membership profile for 6
+- complete divisor membership profile for 12
+- divisor profile sum of 6 equals 12
+- divisor profile sum of 12 equals 28
+- square-divisor profile sum of 6 equals 50
+- square-divisor profile sum of 12 equals 210
+- divisor profile sum of 12 agrees with the V6 sum-of-divisors function
+- square-divisor profile sum of 12 agrees with the V6 square-divisor-sum function
+- divisor profile sum of 12 agrees with the formal L-series coefficient
 
 ## Build Instructions
 
@@ -54,4 +63,6 @@ lake build
 
 This project does not prove Langlands, modularity, analytic continuation, class field theory, or functoriality.
 
-Version 6 is a repair-and-rigor release. It prioritizes build stability, supported theorem statements, and honest tracking of what is actually proved.
+Version 7 is a direct-membership theorem release. It proves concrete Finset divisor membership behavior for 6 and 12 and connects those profiles to divisor sums and formal L-series coefficients.
+
+It does not yet prove general divisor-sum multiplicativity or fully general divisor Finset equality theorems.
