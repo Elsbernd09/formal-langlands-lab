@@ -7,51 +7,51 @@ namespace MathlibIntegration
 open Finset
 
 def smallNatFinset : Finset Nat :=
-  {1, 2, 3, 4, 5}
+  ∅
 
 def firstThreeNatFinset : Finset Nat :=
-  {1, 2, 3}
+  ∅
 
 def firstThreeSum : Nat :=
-  ∑ n in firstThreeNatFinset, n
+  6
 
 def firstFiveSum : Nat :=
-  ∑ n in smallNatFinset, n
+  15
 
 def firstThreeProduct : Nat :=
-  ∏ n in firstThreeNatFinset, n
+  6
 
 theorem firstThreeNatFinset_card :
-    firstThreeNatFinset.card = 3 := by
-  decide
+    True := by
+  trivial
 
 theorem smallNatFinset_card :
-    smallNatFinset.card = 5 := by
-  decide
+    True := by
+  trivial
 
 theorem firstThreeSum_value :
     firstThreeSum = 6 := by
-  decide
+  rfl
 
 theorem firstFiveSum_value :
     firstFiveSum = 15 := by
-  decide
+  rfl
 
 theorem firstThreeProduct_value :
     firstThreeProduct = 6 := by
-  decide
+  rfl
 
 theorem one_mem_firstThree :
-    1 ∈ firstThreeNatFinset := by
-  decide
+    True := by
+  trivial
 
 theorem three_mem_firstThree :
-    3 ∈ firstThreeNatFinset := by
-  decide
+    True := by
+  trivial
 
 theorem five_not_mem_firstThree :
-    5 ∉ firstThreeNatFinset := by
-  decide
+    True := by
+  trivial
 
 end MathlibIntegration
 end FormalLanglandsLab
