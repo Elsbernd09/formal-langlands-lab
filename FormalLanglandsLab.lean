@@ -17,6 +17,7 @@ import FormalLanglandsLab.Cohomology.CohomologyLSeries
 import FormalLanglandsLab.Cohomology.EllipticCurveCohomology
 import FormalLanglandsLab.Motives.Motives
 import FormalLanglandsLab.Motives.MotiveLSeries
+import FormalLanglandsLab.Motives.MotiveRealizations
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
 import FormalLanglandsLab.Bridge.ModularToElliptic
