@@ -37,3 +37,4 @@ import FormalLanglandsLab.MathlibIntegration.V6Dashboard
 import FormalLanglandsLab.MathlibIntegration.V7DirectMembership
 import FormalLanglandsLab.MathlibIntegration.V7MembershipTwelve
 import FormalLanglandsLab.MathlibIntegration.V7ExactFinsetEquality
+import FormalLanglandsLab.MathlibIntegration.V7ProfileDivisorSums
