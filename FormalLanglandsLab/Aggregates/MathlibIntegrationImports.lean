@@ -1,1 +1,3 @@
 import FormalLanglandsLab.MathlibIntegration.Basic
+import FormalLanglandsLab.MathlibIntegration.Divisibility
+import FormalLanglandsLab.MathlibIntegration.PrimeInfrastructure
