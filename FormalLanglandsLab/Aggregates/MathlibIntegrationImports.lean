@@ -55,3 +55,4 @@ import FormalLanglandsLab.MathlibIntegration.V10MembershipAgreement
 import FormalLanglandsLab.MathlibIntegration.V10ExpectedArithmeticBridge
 import FormalLanglandsLab.MathlibIntegration.V10TheoremRegistry
 import FormalLanglandsLab.MathlibIntegration.V10Dashboard
+import FormalLanglandsLab.MathlibIntegration.V11ExtensionalityFramework
