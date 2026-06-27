@@ -20,6 +20,7 @@ import FormalLanglandsLab.Motives.MotiveLSeries
 import FormalLanglandsLab.Motives.MotiveRealizations
 import FormalLanglandsLab.Motives.MotiveMorphisms
 import FormalLanglandsLab.Motives.FunctorialTransfer
+import FormalLanglandsLab.Motives.MotiveCategory
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
 import FormalLanglandsLab.Bridge.ModularToElliptic
