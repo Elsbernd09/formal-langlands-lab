@@ -1,0 +1,7 @@
+import FormalLanglandsLab.LFunctions.FormalDirichletSeries
+import FormalLanglandsLab.LFunctions.EulerProductPrototype
+import FormalLanglandsLab.LFunctions.LocalFactors
+import FormalLanglandsLab.LFunctions.LocalGlobalCompatibility
+import FormalLanglandsLab.LFunctions.EulerPolynomials
+import FormalLanglandsLab.LFunctions.PrimeEulerSystem
+import FormalLanglandsLab.LFunctions.DeterminantEulerFactors
