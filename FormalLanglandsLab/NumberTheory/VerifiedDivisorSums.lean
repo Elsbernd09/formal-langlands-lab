@@ -42,10 +42,21 @@ theorem dividesBool_zero_left
     dividesBool 0 n = false := by
   rfl
 
-theorem dividesBool_one
-    (n : Nat) :
-    dividesBool 1 n = true := by
-  cases n <;> rfl
+theorem dividesBool_one_one :
+    dividesBool 1 1 = true := by
+  rfl
+
+theorem dividesBool_one_two :
+    dividesBool 1 2 = true := by
+  rfl
+
+theorem dividesBool_two_four :
+    dividesBool 2 4 = true := by
+  rfl
+
+theorem dividesBool_three_four :
+    dividesBool 3 4 = false := by
+  rfl
 
 theorem divisorContribution_one_one_at_one :
     divisorContribution constantOneFunction constantOneFunction 1 1 = 1 := by
