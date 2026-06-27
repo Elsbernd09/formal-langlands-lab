@@ -13,3 +13,4 @@ import FormalLanglandsLab.Aggregates.BridgeImports
 import FormalLanglandsLab.Aggregates.ExperimentImports
 import FormalLanglandsLab.Aggregates.ExampleImports
 import FormalLanglandsLab.Aggregates.RegistryImports
+import FormalLanglandsLab.Aggregates.MathlibIntegrationImports
