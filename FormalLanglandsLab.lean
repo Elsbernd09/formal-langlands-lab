@@ -41,6 +41,7 @@ import FormalLanglandsLab.Galois.GaloisLSeries
 import FormalLanglandsLab.Galois.MatrixRepresentations
 import FormalLanglandsLab.Galois.MatrixLSeries
 import FormalLanglandsLab.Galois.MatrixCharacteristicData
+import FormalLanglandsLab.Galois.CohomologicalRepresentations
 import FormalLanglandsLab.Spectral.SpectralData
 import FormalLanglandsLab.Spectral.SpectralOperators
 import FormalLanglandsLab.Spectral.SpectralLSeries
