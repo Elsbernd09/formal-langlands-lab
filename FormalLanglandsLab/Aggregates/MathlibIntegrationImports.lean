@@ -4,3 +4,4 @@ import FormalLanglandsLab.MathlibIntegration.PrimeInfrastructure
 import FormalLanglandsLab.MathlibIntegration.GcdCoprimality
 import FormalLanglandsLab.MathlibIntegration.MathlibMultiplicativity
 import FormalLanglandsLab.MathlibIntegration.PrimeIndexedEuler
+import FormalLanglandsLab.MathlibIntegration.PrimeListEulerProducts
