@@ -25,6 +25,7 @@ import FormalLanglandsLab.Motives.RealizationFunctors
 import FormalLanglandsLab.Motives.NaturalTransformations
 import FormalLanglandsLab.Derived.DerivedObjects
 import FormalLanglandsLab.Derived.StackObjects
+import FormalLanglandsLab.Derived.DerivedLSeries
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
 import FormalLanglandsLab.Bridge.ModularToElliptic
