@@ -23,6 +23,7 @@ import FormalLanglandsLab.Motives.FunctorialTransfer
 import FormalLanglandsLab.Motives.MotiveCategory
 import FormalLanglandsLab.Motives.RealizationFunctors
 import FormalLanglandsLab.Motives.NaturalTransformations
+import FormalLanglandsLab.Derived.DerivedObjects
 import FormalLanglandsLab.Bridge.LanglandsPrototype
 import FormalLanglandsLab.Bridge.GeometryToLFunctions
 import FormalLanglandsLab.Bridge.ModularToElliptic
