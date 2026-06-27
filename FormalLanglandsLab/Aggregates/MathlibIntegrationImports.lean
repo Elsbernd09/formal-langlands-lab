@@ -9,3 +9,5 @@ import FormalLanglandsLab.MathlibIntegration.DivisorLists
 import FormalLanglandsLab.MathlibIntegration.DivisorTables
 import FormalLanglandsLab.MathlibIntegration.MathlibArithmeticExamples
 import FormalLanglandsLab.MathlibIntegration.MathlibLSeriesExamples
+import FormalLanglandsLab.MathlibIntegration.MathlibTheoremRegistry
+import FormalLanglandsLab.MathlibIntegration.MathlibDashboard
