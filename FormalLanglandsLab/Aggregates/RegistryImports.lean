@@ -1,2 +1,3 @@
 import FormalLanglandsLab.Registry.TheoremIndex
 import FormalLanglandsLab.Registry.ModuleClassification
+import FormalLanglandsLab.Registry.ResultDashboard
