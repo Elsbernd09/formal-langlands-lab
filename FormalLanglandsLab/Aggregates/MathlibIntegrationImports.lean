@@ -42,3 +42,4 @@ import FormalLanglandsLab.MathlibIntegration.V7TheoremRegistry
 import FormalLanglandsLab.MathlibIntegration.V7Dashboard
 import FormalLanglandsLab.MathlibIntegration.V8BoundedMembership
 import FormalLanglandsLab.MathlibIntegration.V8BoolPropBridge
+import FormalLanglandsLab.MathlibIntegration.V8CertifiedProfiles
