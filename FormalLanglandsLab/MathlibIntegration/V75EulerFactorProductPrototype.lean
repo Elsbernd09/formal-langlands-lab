@@ -22,7 +22,6 @@ theorem v75_euler_product_one_function_value :
     v73_one_function_euler_factor_two,
     v73_one_function_euler_factor_three
   ]
-  rfl
 
 theorem v75_euler_product_identity_function_value :
     v75ControlledEulerProductPrototype v33IdentityFunction = 600 := by
@@ -31,7 +30,6 @@ theorem v75_euler_product_identity_function_value :
     v73_identity_function_euler_factor_two,
     v73_identity_function_euler_factor_three
   ]
-  rfl
 
 theorem v75_euler_product_square_function_value :
     v75ControlledEulerProductPrototype v63SquareFunction = 69700 := by
@@ -40,7 +38,6 @@ theorem v75_euler_product_square_function_value :
     v73_square_function_euler_factor_two,
     v73_square_function_euler_factor_three
   ]
-  rfl
 
 theorem v75_euler_product_cube_function_value :
     v75ControlledEulerProductPrototype v63CubeFunction = 11957400 := by
@@ -49,16 +46,15 @@ theorem v75_euler_product_cube_function_value :
     v73_cube_function_euler_factor_two,
     v73_cube_function_euler_factor_three
   ]
-  rfl
 
 theorem v75_euler_product_zero_function_value :
     v75ControlledEulerProductPrototype v33ZeroFunction = 0 := by
   unfold v75ControlledEulerProductPrototype
   rw [
-    v74_euler_factor_two_zero_scale v33OneFunction,
-    v74_euler_factor_three_zero_scale v33OneFunction
+    v73_euler_factor_aggregate_two_value,
+    v73_euler_factor_aggregate_three_value
   ]
-  rfl
+  simp [v33ZeroFunction]
 
 theorem v75_euler_product_prototype_commutes_local_factors
     (f : v33ArithmeticFunction) :
