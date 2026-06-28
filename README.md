@@ -1,66 +1,48 @@
 # Formal Langlands Laboratory
 
-A Lean 4 / mathlib formalization project exploring verified divisor infrastructure, arithmetic functions, controlled convolution prototypes, divisor sums, multiplicative functions, controlled Dirichlet-series / Euler-product architecture, and finite Euler-product coefficient matching.
+A Lean 4 / mathlib formalization project exploring verified divisor infrastructure, arithmetic functions, controlled convolution prototypes, divisor sums, multiplicative functions, controlled Dirichlet-series / Euler-product architecture, finite Euler-product coefficient matching, and generalized finite prime-window infrastructure.
 
 ## Current Release
 
-**Version:** V90 Finite Coefficient Matching Checkpoint  
-**Phase:** 176  
-**Status:** Third public checkpoint
+**Version:** V100 Generalized Finite Prime-Window Public Checkpoint  
+**Phase:** 186  
+**Status:** Fourth public checkpoint
 
-## What This Project Proves
+## Main V100 Package
 
-This project formalizes a verified path from divisor predicates to explicit arithmetic-function and finite Euler-product infrastructure.
+`v100_generalized_prime_window_checkpoint_package`
 
-Main verified arcs:
+## What V100 Adds
 
-1. Arbitrary-n divisor infrastructure
-2. Arithmetic-function core
-3. Pointwise arithmetic operations
-4. Divisor-pair support architecture
-5. Controlled convolution prototypes for n = 6 and n = 12
-6. Controlled divisor-sum architecture
-7. Multiplicative and completely multiplicative arithmetic functions
-8. Controlled Dirichlet-series coefficient windows
-9. Controlled Euler-factor coefficient windows
-10. Two-factor Euler-product prototype
-11. Local multiplicativity bridge
-12. Controlled Dirichlet-series / Euler-product comparison layer
-13. Expanded Euler-product term matching
-14. Complete-multiplicativity coefficient matching
-15. Finite aggregate/product identity
-16. Collision-free finite coefficient support
-17. Duplicate-index aggregation framework
+V100 packages the generalized finite prime-window arc:
 
-## V90 Main Checkpoint
+1. generalized prime-power windows
+2. generalized two-prime product support windows
+3. expanded term lists
+4. combined coefficient lists
+5. complete-multiplicativity matching
+6. product-support collision analysis
+7. finite local-factor product prototype
+8. product-expansion bridge
+9. theorem-map registry
+10. public checkpoint registry
 
-The main V90 package is:
+## Verified Special Case
 
-`v90_finite_coefficient_matching_checkpoint_package`
+The earlier p = 2, q = 3 Euler-product prototype is recovered as a special case of the generalized finite framework.
 
-The V90 theorem map builds on:
+## Honest Scope
 
-- `v81_controlled_euler_product_expanded_term_matching_package`
-- `v82_complete_multiplicativity_coefficient_matching_package`
-- `v83_finite_euler_product_aggregate_identity_package`
-- `v84_finite_euler_product_coefficient_support_package`
-- `v85_finite_euler_product_coefficient_matching_package`
-- `v86_duplicate_index_detection_package`
-- `v87_duplicate_index_aggregation_framework_package`
-- `v88_finite_coefficient_matching_theorem_map_package`
-- `v89_coefficient_matching_release_readiness_package`
+This project does not claim:
 
-## What This Project Does Not Claim
+- Langlands reciprocity
+- infinite Euler products
+- analytic convergence
+- a general all-prime Euler product theorem
+- universal collision-freeness for all natural-number pairs
+- a fully general Dirichlet convolution over all natural numbers
 
-This project does not claim a proof of Langlands reciprocity.
-
-This project does not claim an infinite Euler product theorem.
-
-This project does not claim analytic convergence of Dirichlet series.
-
-This project does not claim a general all-prime Euler product theorem.
-
-This project does not yet define a fully general Dirichlet convolution over all natural numbers.
+The project is a serious finite Lean-verified infrastructure project, not a completed Langlands proof.
 
 ## Build
 
@@ -70,6 +52,4 @@ Run:
 
 ## Project Philosophy
 
-The project prioritizes verified theorem infrastructure over unsupported claims.
-
-The current release is a finite coefficient-matching checkpoint, not a final Langlands formalization.
+The project prioritizes verified theorem infrastructure over unsupported mathematical claims.
