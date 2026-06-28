@@ -18,9 +18,6 @@ def v33IdentityFunction : v33ArithmeticFunction :=
 def v33KroneckerDeltaAtOne : v33ArithmeticFunction :=
   fun n => if n = 1 then 1 else 0
 
-def v33DivisorCountFunction : v33ArithmeticFunction :=
-  fun n => (v6DivisorFinset n).card
-
 def v33ArithmeticFunctionExtensionalEquality
     (f g : v33ArithmeticFunction) : Prop :=
   ∀ n : Nat, f n = g n
@@ -81,16 +78,19 @@ theorem v33_identity_function_extensional_self :
   intro n
   rfl
 
-theorem v33_divisor_count_function_definition
-    (n : Nat) :
-    v33DivisorCountFunction n = (v6DivisorFinset n).card := by
+theorem v33_delta_function_extensional_self :
+    v33ArithmeticFunctionExtensionalEquality
+      v33KroneckerDeltaAtOne
+      v33KroneckerDeltaAtOne := by
+  intro n
   rfl
 
 def v33ArithmeticFunctionCorePackage : Prop :=
   (∀ n : Nat, v33ZeroFunction n = 0) ∧
   (∀ n : Nat, v33OneFunction n = 1) ∧
   (∀ n : Nat, v33IdentityFunction n = n) ∧
-  v33ArithmeticFunctionExtensionalEquality v33ZeroFunction v33ZeroFunction
+  v33ArithmeticFunctionExtensionalEquality v33ZeroFunction v33ZeroFunction ∧
+  v33ArithmeticFunctionExtensionalEquality v33KroneckerDeltaAtOne v33KroneckerDeltaAtOne
 
 theorem v33_arithmetic_function_core_package :
     v33ArithmeticFunctionCorePackage := by
@@ -100,7 +100,10 @@ theorem v33_arithmetic_function_core_package :
       v33_one_function_value,
       ⟨
         v33_identity_function_value,
-        v33_zero_function_extensional_self
+        ⟨
+          v33_zero_function_extensional_self,
+          v33_delta_function_extensional_self
+        ⟩
       ⟩
     ⟩
   ⟩
