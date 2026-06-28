@@ -36,7 +36,7 @@ theorem v35_divisor_pair_left_divides
     (h : v35DivisorPair n a b) :
     a ∣ n := by
   rcases h with ⟨ha, hb, hmul⟩
-  exact ⟨b, hmul⟩
+  exact ⟨b, hmul.symm⟩
 
 theorem v35_divisor_pair_right_divides
     {n a b : Nat}
@@ -45,7 +45,7 @@ theorem v35_divisor_pair_right_divides
   rcases h with ⟨ha, hb, hmul⟩
   exact ⟨a, by
     rw [Nat.mul_comm]
-    exact hmul
+    exact hmul.symm
   ⟩
 
 theorem v35_divisor_pair_left_nonzero
