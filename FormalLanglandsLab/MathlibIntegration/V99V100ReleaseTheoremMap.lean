@@ -6,6 +6,14 @@ namespace MathlibIntegration
 def v99ReleaseVersion : Nat := 99
 def v99ReleasePhase : Nat := 185
 
+theorem v99ReleaseVersion_value :
+    v99ReleaseVersion = 99 := by
+  rfl
+
+theorem v99ReleasePhase_value :
+    v99ReleasePhase = 185 := by
+  rfl
+
 def v99PrimeWindowFrameworkResultCount : Nat := 8
 def v99TwoPrimeProductWindowResultCount : Nat := 6
 def v99CollisionAnalysisResultCount : Nat := 7
