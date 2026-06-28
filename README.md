@@ -1,50 +1,57 @@
 # Formal Langlands Laboratory
 
-A Lean 4 / mathlib formalization project exploring verified divisor infrastructure, arithmetic functions, pre-convolution architecture, controlled summation, and explicit controlled Dirichlet-convolution prototypes.
+A Lean 4 / mathlib formalization project exploring verified divisor infrastructure, arithmetic functions, controlled convolution prototypes, divisor sums, multiplicative arithmetic functions, and controlled Dirichlet-series / Euler-product architecture.
 
 ## Current Release
 
-**Version:** V60 Public Release Package  
-**Phase:** 146  
-**Status:** First serious public checkpoint
+**Version:** V80 Controlled Euler-Product Checkpoint  
+**Phase:** 166  
+**Status:** Second serious public checkpoint
 
 ## What This Project Proves
 
-This project currently formalizes a verified path from divisor predicates to explicit controlled convolution prototypes.
+This project formalizes a verified path from divisor predicates to explicit arithmetic-function and Euler-product infrastructure.
 
-The main verified arcs are:
+Main verified arcs:
 
 1. Arbitrary-n divisor infrastructure
 2. Arithmetic-function core
 3. Pointwise arithmetic operations
 4. Divisor-pair support architecture
-5. Dirichlet kernel evaluation and bilinearity
-6. Contribution relation, uniqueness, and algebra
-7. Controlled list-based summation
-8. Explicit controlled convolution prototypes for `n = 6` and `n = 12`
-9. Symmetry, additivity, and scaling for those explicit prototypes
+5. Controlled convolution prototypes for n = 6 and n = 12
+6. Controlled divisor-sum architecture
+7. Multiplicative and completely multiplicative arithmetic functions
+8. Controlled Dirichlet-series coefficient windows
+9. Controlled Euler-factor coefficient windows
+10. Two-factor Euler-product prototype
+11. Local multiplicativity bridge
+12. Controlled Dirichlet-series / Euler-product comparison layer
 
 ## What This Project Does Not Claim
 
-This project does **not** claim a proof of Langlands reciprocity.
+This project does not claim a proof of Langlands reciprocity.
 
-This project does **not** yet define a fully general Dirichlet convolution over all natural numbers.
+This project does not claim an infinite Euler product theorem.
 
-This project is currently a formal arithmetic/divisor/convolution-foundation project in Lean.
+This project does not claim analytic convergence of Dirichlet series.
 
-## Key Theorem Packages
+This project does not yet define a fully general Dirichlet convolution over all natural numbers.
 
-Important registry theorems include:
+## Key V80 Theorems
 
-- `v32_arbitrary_divisor_arc_package`
-- `v48_pre_convolution_architecture`
-- `v58_controlled_convolution_bilinear_registry_package`
-- `v59_full_release_theorem_map`
-- `v60_public_release_package`
+- `v80_controlled_euler_product_checkpoint_package`
+- `v79_controlled_euler_product_release_theorem_map`
+- `v77_euler_product_expansion_registry_package`
+- `v78_dirichlet_euler_comparison_architecture_package`
 
-## Explicit Controlled Convolution Prototypes
+## Build
 
-For `n = 6`, the project defines:
+Run:
 
-```lean
-v52SixControlledConvolutionPrototype f g
+    lake build
+
+## Project Philosophy
+
+The project prioritizes verified theorem infrastructure over unsupported claims.
+
+The current release is a foundational Euler-product checkpoint, not a final Langlands formalization.
