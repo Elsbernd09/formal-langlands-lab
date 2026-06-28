@@ -30,7 +30,6 @@ theorem v82_complete_multiplicative_expanded_terms_match_combined_terms
     ← hf 8 9,
     ← hf 8 27
   ]
-  rfl
 
 theorem v82_complete_multiplicative_expanded_aggregate_matches_combined_aggregate
     {f : v33ArithmeticFunction}
