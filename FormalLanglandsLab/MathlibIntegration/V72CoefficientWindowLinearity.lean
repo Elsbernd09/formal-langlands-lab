@@ -4,6 +4,7 @@ namespace FormalLanglandsLab
 namespace MathlibIntegration
 
 set_option linter.unusedSimpArgs false
+set_option maxHeartbeats 2000000
 
 def v72CoefficientAggregateSixAdditivity : Prop :=
   ∀ f g : v33ArithmeticFunction,
