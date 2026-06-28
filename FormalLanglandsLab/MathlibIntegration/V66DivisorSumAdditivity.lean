@@ -3,6 +3,8 @@ import FormalLanglandsLab.MathlibIntegration.V65Dashboard
 namespace FormalLanglandsLab
 namespace MathlibIntegration
 
+set_option linter.unusedSimpArgs false
+
 def v66DivisorSumSixAdditivity : Prop :=
   ∀ f g : v33ArithmeticFunction,
     v65ExplicitDivisorSumSix (v34PointwiseAdd f g) =
@@ -12,6 +14,16 @@ def v66DivisorSumTwelveAdditivity : Prop :=
   ∀ f g : v33ArithmeticFunction,
     v65ExplicitDivisorSumTwelve (v34PointwiseAdd f g) =
       v65ExplicitDivisorSumTwelve f + v65ExplicitDivisorSumTwelve g
+
+theorem v66_divisor_sum_six_zero_function :
+    v65ExplicitDivisorSumSix v33ZeroFunction = 0 := by
+  rw [v65_explicit_divisor_sum_six_value]
+  simp [v33ZeroFunction]
+
+theorem v66_divisor_sum_twelve_zero_function :
+    v65ExplicitDivisorSumTwelve v33ZeroFunction = 0 := by
+  rw [v65_explicit_divisor_sum_twelve_value]
+  simp [v33ZeroFunction]
 
 theorem v66_divisor_sum_six_additivity
     (f g : v33ArithmeticFunction) :
@@ -60,36 +72,60 @@ theorem v66_divisor_sum_six_zero_add_left
     v65ExplicitDivisorSumSix
       (v34PointwiseAdd v33ZeroFunction f) =
         v65ExplicitDivisorSumSix f := by
-  rw [v66_divisor_sum_six_additivity]
-  rw [v65_explicit_divisor_sum_six_value]
-  simp [v33ZeroFunction]
+  calc
+    v65ExplicitDivisorSumSix (v34PointwiseAdd v33ZeroFunction f)
+        = v65ExplicitDivisorSumSix v33ZeroFunction +
+          v65ExplicitDivisorSumSix f := by
+            exact v66_divisor_sum_six_additivity v33ZeroFunction f
+    _ = 0 + v65ExplicitDivisorSumSix f := by
+            rw [v66_divisor_sum_six_zero_function]
+    _ = v65ExplicitDivisorSumSix f := by
+            simp
 
 theorem v66_divisor_sum_six_zero_add_right
     (f : v33ArithmeticFunction) :
     v65ExplicitDivisorSumSix
       (v34PointwiseAdd f v33ZeroFunction) =
         v65ExplicitDivisorSumSix f := by
-  rw [v66_divisor_sum_six_additivity]
-  rw [v65_explicit_divisor_sum_six_value]
-  simp [v33ZeroFunction]
+  calc
+    v65ExplicitDivisorSumSix (v34PointwiseAdd f v33ZeroFunction)
+        = v65ExplicitDivisorSumSix f +
+          v65ExplicitDivisorSumSix v33ZeroFunction := by
+            exact v66_divisor_sum_six_additivity f v33ZeroFunction
+    _ = v65ExplicitDivisorSumSix f + 0 := by
+            rw [v66_divisor_sum_six_zero_function]
+    _ = v65ExplicitDivisorSumSix f := by
+            simp
 
 theorem v66_divisor_sum_twelve_zero_add_left
     (f : v33ArithmeticFunction) :
     v65ExplicitDivisorSumTwelve
       (v34PointwiseAdd v33ZeroFunction f) =
         v65ExplicitDivisorSumTwelve f := by
-  rw [v66_divisor_sum_twelve_additivity]
-  rw [v65_explicit_divisor_sum_twelve_value]
-  simp [v33ZeroFunction]
+  calc
+    v65ExplicitDivisorSumTwelve (v34PointwiseAdd v33ZeroFunction f)
+        = v65ExplicitDivisorSumTwelve v33ZeroFunction +
+          v65ExplicitDivisorSumTwelve f := by
+            exact v66_divisor_sum_twelve_additivity v33ZeroFunction f
+    _ = 0 + v65ExplicitDivisorSumTwelve f := by
+            rw [v66_divisor_sum_twelve_zero_function]
+    _ = v65ExplicitDivisorSumTwelve f := by
+            simp
 
 theorem v66_divisor_sum_twelve_zero_add_right
     (f : v33ArithmeticFunction) :
     v65ExplicitDivisorSumTwelve
       (v34PointwiseAdd f v33ZeroFunction) =
         v65ExplicitDivisorSumTwelve f := by
-  rw [v66_divisor_sum_twelve_additivity]
-  rw [v65_explicit_divisor_sum_twelve_value]
-  simp [v33ZeroFunction]
+  calc
+    v65ExplicitDivisorSumTwelve (v34PointwiseAdd f v33ZeroFunction)
+        = v65ExplicitDivisorSumTwelve f +
+          v65ExplicitDivisorSumTwelve v33ZeroFunction := by
+            exact v66_divisor_sum_twelve_additivity f v33ZeroFunction
+    _ = v65ExplicitDivisorSumTwelve f + 0 := by
+            rw [v66_divisor_sum_twelve_zero_function]
+    _ = v65ExplicitDivisorSumTwelve f := by
+            simp
 
 def v66DivisorSumAdditivityPackage : Prop :=
   v66DivisorSumSixAdditivity ∧
