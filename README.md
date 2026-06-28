@@ -1,72 +1,50 @@
 # Formal Langlands Laboratory
 
-A Lean 4 formal verification laboratory for arithmetic functions, divisor sums, formal Dirichlet series, Euler factors, finite Euler products, and Langlands-inspired mathematical architecture.
+A Lean 4 / mathlib formalization project exploring verified divisor infrastructure, arithmetic functions, pre-convolution architecture, controlled summation, and explicit controlled Dirichlet-convolution prototypes.
 
-This project is not a proof of the Langlands Program. It is a formal mathematics laboratory that builds verified arithmetic infrastructure connected to simplified L-function and Euler-product models.
+## Current Release
 
-## Current Version
+**Version:** V60 Public Release Package  
+**Phase:** 146  
+**Status:** First serious public checkpoint
 
-Version 13: Strong Out-of-Range Agreement Preparation
+## What This Project Proves
 
-Version 13 builds on the universal membership-agreement preparation layer from Version 12.
+This project currently formalizes a verified path from divisor predicates to explicit controlled convolution prototypes.
 
-Version 12 prepared bounded and actual out-of-range ingredients for universal membership agreement.
+The main verified arcs are:
 
-Version 13 strengthens the expected-Finset side by adding expected out-of-range examples, actual-vs-expected out-of-range agreement packages, and bounded-plus-out-of-range preparation structures.
+1. Arbitrary-n divisor infrastructure
+2. Arithmetic-function core
+3. Pointwise arithmetic operations
+4. Divisor-pair support architecture
+5. Dirichlet kernel evaluation and bilinearity
+6. Contribution relation, uniqueness, and algebra
+7. Controlled list-based summation
+8. Explicit controlled convolution prototypes for `n = 6` and `n = 12`
+9. Symmetry, additivity, and scaling for those explicit prototypes
 
-## Version 13 Adds
+## What This Project Does Not Claim
 
-- expected out-of-range examples for 6
-- expected out-of-range examples for 12
-- expected out-of-range sample package for 6
-- expected out-of-range sample package for 12
-- out-of-range agreement definition for 6
-- out-of-range agreement definition for 12
-- actual-vs-expected out-of-range agreement package for 6
-- actual-vs-expected out-of-range agreement package for 12
-- bounded-plus-out-of-range agreement package for 6
-- bounded-plus-out-of-range agreement package for 12
-- strong agreement preparation package
-- V13 theorem registry
-- V13 dashboard
+This project does **not** claim a proof of Langlands reciprocity.
 
-## Representative V13 Results
+This project does **not** yet define a fully general Dirichlet convolution over all natural numbers.
 
-Version 13 verifies examples such as:
+This project is currently a formal arithmetic/divisor/convolution-foundation project in Lean.
 
-- `7 ∉ v10ExpectedDivisorsSix`
-- `8 ∉ v10ExpectedDivisorsSix`
-- `9 ∉ v10ExpectedDivisorsSix`
-- `10 ∉ v10ExpectedDivisorsSix`
-- `13 ∉ v10ExpectedDivisorsTwelve`
-- `14 ∉ v10ExpectedDivisorsTwelve`
-- `15 ∉ v10ExpectedDivisorsTwelve`
-- `16 ∉ v10ExpectedDivisorsTwelve`
-- `v13OutOfRangeAgreementSix 7`
-- `v13OutOfRangeAgreementSix 8`
-- `v13OutOfRangeAgreementSix 9`
-- `v13OutOfRangeAgreementSix 10`
-- `v13OutOfRangeAgreementTwelve 13`
-- `v13OutOfRangeAgreementTwelve 14`
-- `v13OutOfRangeAgreementTwelve 15`
-- `v13OutOfRangeAgreementTwelve 16`
-- bounded-plus-out-of-range agreement for 6
-- bounded-plus-out-of-range agreement for 12
-- strong agreement preparation
+## Key Theorem Packages
 
-## Build Instructions
+Important registry theorems include:
 
-Run:
+- `v32_arbitrary_divisor_arc_package`
+- `v48_pre_convolution_architecture`
+- `v58_controlled_convolution_bilinear_registry_package`
+- `v59_full_release_theorem_map`
+- `v60_public_release_package`
 
-source ~/.profile
-lake build
+## Explicit Controlled Convolution Prototypes
 
-## Honest Scope
+For `n = 6`, the project defines:
 
-This project does not prove Langlands, modularity, analytic continuation, class field theory, or functoriality.
-
-Version 13 does not yet prove the final universal membership theorem over all natural numbers.
-
-Version 13 does not yet prove full Finset equality.
-
-It strengthens the expected-side and out-of-range agreement infrastructure needed before attempting those theorems.
+```lean
+v52SixControlledConvolutionPrototype f g
