@@ -25,7 +25,7 @@ For the cube function:
 For the fourth-power function:
 
 - `Σ_{d|6} d⁴ = 1394`
-- `Σ_{d|12} d⁴ = 22950`
+- `Σ_{d|12} d⁴ = 22386`
 
 ## Main Registry
 

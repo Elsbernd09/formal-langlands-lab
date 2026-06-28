@@ -25,37 +25,37 @@ theorem v69_square_sum_six_value :
     v69SigmaSquareSix = 50 := by
   unfold v69SigmaSquareSix
   rw [v65_explicit_divisor_sum_six_value]
-  rfl
+  simp [v63SquareFunction, v34PointwiseMul, v33IdentityFunction]
 
 theorem v69_square_sum_twelve_value :
     v69SigmaSquareTwelve = 210 := by
   unfold v69SigmaSquareTwelve
   rw [v65_explicit_divisor_sum_twelve_value]
-  rfl
+  simp [v63SquareFunction, v34PointwiseMul, v33IdentityFunction]
 
 theorem v69_cube_sum_six_value :
     v69SigmaCubeSix = 252 := by
   unfold v69SigmaCubeSix
   rw [v65_explicit_divisor_sum_six_value]
-  rfl
+  simp [v63CubeFunction, v63SquareFunction, v34PointwiseMul, v33IdentityFunction]
 
 theorem v69_cube_sum_twelve_value :
     v69SigmaCubeTwelve = 2044 := by
   unfold v69SigmaCubeTwelve
   rw [v65_explicit_divisor_sum_twelve_value]
-  rfl
+  simp [v63CubeFunction, v63SquareFunction, v34PointwiseMul, v33IdentityFunction]
 
 theorem v69_fourth_power_sum_six_value :
     v69SigmaFourthPowerSix = 1394 := by
   unfold v69SigmaFourthPowerSix
   rw [v65_explicit_divisor_sum_six_value]
-  rfl
+  simp [v63FourthPowerFunction, v63SquareFunction, v34PointwiseMul, v33IdentityFunction]
 
 theorem v69_fourth_power_sum_twelve_value :
-    v69SigmaFourthPowerTwelve = 22950 := by
+    v69SigmaFourthPowerTwelve = 22386 := by
   unfold v69SigmaFourthPowerTwelve
   rw [v65_explicit_divisor_sum_twelve_value]
-  rfl
+  simp [v63FourthPowerFunction, v63SquareFunction, v34PointwiseMul, v33IdentityFunction]
 
 theorem v69_square_function_is_multiplicative :
     v61Multiplicative v63SquareFunction := by
@@ -102,7 +102,7 @@ theorem v69_divisor_sum_six_fourth_power_function_explicit :
   exact v69_fourth_power_sum_six_value
 
 theorem v69_divisor_sum_twelve_fourth_power_function_explicit :
-    v65ExplicitDivisorSumTwelve v63FourthPowerFunction = 22950 := by
+    v65ExplicitDivisorSumTwelve v63FourthPowerFunction = 22386 := by
   exact v69_fourth_power_sum_twelve_value
 
 def v69DivisorSumMultiplicativeFunctionEvaluationPackage : Prop :=
@@ -111,7 +111,7 @@ def v69DivisorSumMultiplicativeFunctionEvaluationPackage : Prop :=
   (v65ExplicitDivisorSumSix v63CubeFunction = 252) ∧
   (v65ExplicitDivisorSumTwelve v63CubeFunction = 2044) ∧
   (v65ExplicitDivisorSumSix v63FourthPowerFunction = 1394) ∧
-  (v65ExplicitDivisorSumTwelve v63FourthPowerFunction = 22950)
+  (v65ExplicitDivisorSumTwelve v63FourthPowerFunction = 22386)
 
 theorem v69_divisor_sum_multiplicative_function_evaluation_package :
     v69DivisorSumMultiplicativeFunctionEvaluationPackage := by
