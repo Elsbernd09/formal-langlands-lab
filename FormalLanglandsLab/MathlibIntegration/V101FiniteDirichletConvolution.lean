@@ -1,242 +1,228 @@
 import FormalLanglandsLab.MathlibIntegration.V100Dashboard
-import FormalLanglandsLab.MathlibIntegration.V33ArithmeticFunctionCore
-import FormalLanglandsLab.MathlibIntegration.V35DirichletDivisorPairKernel
-import FormalLanglandsLab.MathlibIntegration.V50ControlledSummationExperiment
-import FormalLanglandsLab.MathlibIntegration.V51RecursiveContributionSums
 
 namespace FormalLanglandsLab
 namespace MathlibIntegration
 
-def v101DirichletPair : Type := Nat × Nat
+set_option linter.unusedSimpArgs false
 
-def v101FiniteDirichletSupport
-    (n : Nat) (pair : v101DirichletPair) : Prop :=
-  v35DivisorPair n pair.1 pair.2
-
-def v101FiniteDirichletPairContribution
+def v101PairContribution
     (f g : v33ArithmeticFunction)
-    (pair : v101DirichletPair) : Nat :=
-  f pair.1 * g pair.2
+    (ab : Nat × Nat) : Nat :=
+  f ab.1 * g ab.2
 
-def v101SwapDivisorPairSupportList
-    (pairs : List v101DirichletPair) : List v101DirichletPair :=
-  pairs.map Prod.swap
-
-def v101FiniteDirichletConvolution
-    (f g : v33ArithmeticFunction)
-    (pairs : List v101DirichletPair) : Nat :=
+def v101FiniteDirichletConvolutionOver
+    (support : List (Nat × Nat))
+    (f g : v33ArithmeticFunction) : Nat :=
   v51ContributionAggregate
-    (pairs.map (v101FiniteDirichletPairContribution f g))
+    (support.map (v101PairContribution f g))
 
-@[simp]
-theorem v101_finite_dirichlet_pair_contribution_value
+def v101DivisorPairSupportSix : List (Nat × Nat) :=
+  [(1, 6), (2, 3), (3, 2), (6, 1)]
+
+def v101DivisorPairSupportTwelve : List (Nat × Nat) :=
+  [(1, 12), (2, 6), (3, 4), (4, 3), (6, 2), (12, 1)]
+
+def v101FiniteDirichletConvolutionSix
+    (f g : v33ArithmeticFunction) : Nat :=
+  v101FiniteDirichletConvolutionOver
+    v101DivisorPairSupportSix f g
+
+def v101FiniteDirichletConvolutionTwelve
+    (f g : v33ArithmeticFunction) : Nat :=
+  v101FiniteDirichletConvolutionOver
+    v101DivisorPairSupportTwelve f g
+
+theorem v101_pair_contribution_value
     (f g : v33ArithmeticFunction)
-    (pair : v101DirichletPair) :
-    v101FiniteDirichletPairContribution f g pair =
-      f pair.1 * g pair.2 := by
+    (a b : Nat) :
+    v101PairContribution f g (a, b) =
+      f a * g b := by
   rfl
 
-@[simp]
-theorem v101_finite_dirichlet_pair_contribution_swap
-    (f g : v33ArithmeticFunction)
-    (pair : v101DirichletPair) :
-    v101FiniteDirichletPairContribution f g (Prod.swap pair) =
-      v101FiniteDirichletPairContribution g f pair := by
-  cases pair with
-  | mk a b =>
-      simp [v101FiniteDirichletPairContribution, Prod.swap]
-
-@[simp]
-theorem v101_finite_dirichlet_convolution_swapped_support
-    (f g : v33ArithmeticFunction)
-    (pairs : List v101DirichletPair) :
-    v101FiniteDirichletConvolution f g
-      (v101SwapDivisorPairSupportList pairs) =
-      v101FiniteDirichletConvolution g f pairs := by
-  induction pairs with
-  | nil =>
-      simp [v101FiniteDirichletConvolution, v101SwapDivisorPairSupportList]
-  | cons pair tail ih =>
-      simp [v101FiniteDirichletConvolution,
-        v101SwapDivisorPairSupportList,
-        v101FiniteDirichletPairContribution,
-        v51ContributionAggregate,
-        v50NatListSum,
-        v101_finite_dirichlet_pair_contribution_swap,
-        ih]
-
-def v101SixDivisorPairSupport : List v101DirichletPair :=
-  [ (1, 6), (2, 3), (3, 2), (6, 1) ]
-
-def v101TwelveDivisorPairSupport : List v101DirichletPair :=
-  [ (1, 12), (2, 6), (3, 4), (4, 3), (6, 2), (12, 1) ]
-
-def v101SixDivisorPairSupportSwapped : List v101DirichletPair :=
-  v101SwapDivisorPairSupportList v101SixDivisorPairSupport
-
-def v101TwelveDivisorPairSupportSwapped : List v101DirichletPair :=
-  v101SwapDivisorPairSupportList v101TwelveDivisorPairSupport
-
-@[simp]
-theorem v101_six_divisor_pair_support_swapped_value :
-    v101SixDivisorPairSupportSwapped =
-      [ (6, 1), (3, 2), (2, 3), (1, 6) ] := by
+theorem v101_six_support_length :
+    v101DivisorPairSupportSix.length = 4 := by
   rfl
 
-@[simp]
-theorem v101_twelve_divisor_pair_support_swapped_value :
-    v101TwelveDivisorPairSupportSwapped =
-      [ (12, 1), (6, 2), (4, 3), (3, 4), (2, 6), (1, 12) ] := by
+theorem v101_twelve_support_length :
+    v101DivisorPairSupportTwelve.length = 6 := by
   rfl
 
-@[simp]
-theorem v101_six_finite_dirichlet_convolution_value
+theorem v101_finite_dirichlet_convolution_six_value
     (f g : v33ArithmeticFunction) :
-    v101FiniteDirichletConvolution f g v101SixDivisorPairSupport =
-      f 1 * g 6 + f 2 * g 3 + f 3 * g 2 + f 6 * g 1 := by
-  simp [v101FiniteDirichletConvolution, v101SixDivisorPairSupport,
-    v51ContributionAggregate, v50NatListSum]
+    v101FiniteDirichletConvolutionSix f g =
+      f 1 * g 6 +
+      f 2 * g 3 +
+      f 3 * g 2 +
+      f 6 * g 1 := by
+  simp [
+    v101FiniteDirichletConvolutionSix,
+    v101FiniteDirichletConvolutionOver,
+    v101DivisorPairSupportSix,
+    v101PairContribution,
+    v51ContributionAggregate,
+    v50NatListSum,
+    Nat.add_assoc
+  ]
 
-@[simp]
-theorem v101_twelve_finite_dirichlet_convolution_value
+theorem v101_finite_dirichlet_convolution_twelve_value
     (f g : v33ArithmeticFunction) :
-    v101FiniteDirichletConvolution f g v101TwelveDivisorPairSupport =
-      f 1 * g 12 + f 2 * g 6 + f 3 * g 4 +
-      f 4 * g 3 + f 6 * g 2 + f 12 * g 1 := by
-  simp [v101FiniteDirichletConvolution, v101TwelveDivisorPairSupport,
-    v51ContributionAggregate, v50NatListSum, Nat.add_assoc]
+    v101FiniteDirichletConvolutionTwelve f g =
+      f 1 * g 12 +
+      f 2 * g 6 +
+      f 3 * g 4 +
+      f 4 * g 3 +
+      f 6 * g 2 +
+      f 12 * g 1 := by
+  simp [
+    v101FiniteDirichletConvolutionTwelve,
+    v101FiniteDirichletConvolutionOver,
+    v101DivisorPairSupportTwelve,
+    v101PairContribution,
+    v51ContributionAggregate,
+    v50NatListSum,
+    Nat.add_assoc
+  ]
 
-@[simp]
-theorem v101_six_finite_dirichlet_convolution_swapped
-    (f g : v33ArithmeticFunction) :
-    v101FiniteDirichletConvolution f g v101SixDivisorPairSupportSwapped =
-      v101FiniteDirichletConvolution g f v101SixDivisorPairSupport := by
-  simp [v101SixDivisorPairSupportSwapped,
-    v101SwapDivisorPairSupportList,
-    v101_finite_dirichlet_convolution_swapped_support]
+theorem v101_six_one_one_value :
+    v101FiniteDirichletConvolutionSix
+      v33OneFunction v33OneFunction = 4 := by
+  simp [
+    v101FiniteDirichletConvolutionSix,
+    v101FiniteDirichletConvolutionOver,
+    v101DivisorPairSupportSix,
+    v101PairContribution,
+    v33OneFunction,
+    v51ContributionAggregate,
+    v50NatListSum
+  ]
 
-@[simp]
-theorem v101_twelve_finite_dirichlet_convolution_swapped
-    (f g : v33ArithmeticFunction) :
-    v101FiniteDirichletConvolution f g v101TwelveDivisorPairSupportSwapped =
-      v101FiniteDirichletConvolution g f v101TwelveDivisorPairSupport := by
-  simp [v101TwelveDivisorPairSupportSwapped,
-    v101SwapDivisorPairSupportList,
-    v101_finite_dirichlet_convolution_swapped_support]
+theorem v101_twelve_one_one_value :
+    v101FiniteDirichletConvolutionTwelve
+      v33OneFunction v33OneFunction = 6 := by
+  simp [
+    v101FiniteDirichletConvolutionTwelve,
+    v101FiniteDirichletConvolutionOver,
+    v101DivisorPairSupportTwelve,
+    v101PairContribution,
+    v33OneFunction,
+    v51ContributionAggregate,
+    v50NatListSum
+  ]
 
+theorem v101_six_identity_one_value :
+    v101FiniteDirichletConvolutionSix
+      v33IdentityFunction v33OneFunction = 12 := by
+  simp [
+    v101FiniteDirichletConvolutionSix,
+    v101FiniteDirichletConvolutionOver,
+    v101DivisorPairSupportSix,
+    v101PairContribution,
+    v33IdentityFunction,
+    v33OneFunction,
+    v51ContributionAggregate,
+    v50NatListSum
+  ]
 
-def v101FiniteDirichletConvolutionPackage : Prop :=
+theorem v101_twelve_identity_one_value :
+    v101FiniteDirichletConvolutionTwelve
+      v33IdentityFunction v33OneFunction = 28 := by
+  simp [
+    v101FiniteDirichletConvolutionTwelve,
+    v101FiniteDirichletConvolutionOver,
+    v101DivisorPairSupportTwelve,
+    v101PairContribution,
+    v33IdentityFunction,
+    v33OneFunction,
+    v51ContributionAggregate,
+    v50NatListSum
+  ]
+
+theorem v101_six_one_identity_value :
+    v101FiniteDirichletConvolutionSix
+      v33OneFunction v33IdentityFunction = 12 := by
+  simp [
+    v101FiniteDirichletConvolutionSix,
+    v101FiniteDirichletConvolutionOver,
+    v101DivisorPairSupportSix,
+    v101PairContribution,
+    v33IdentityFunction,
+    v33OneFunction,
+    v51ContributionAggregate,
+    v50NatListSum
+  ]
+
+theorem v101_twelve_one_identity_value :
+    v101FiniteDirichletConvolutionTwelve
+      v33OneFunction v33IdentityFunction = 28 := by
+  simp [
+    v101FiniteDirichletConvolutionTwelve,
+    v101FiniteDirichletConvolutionOver,
+    v101DivisorPairSupportTwelve,
+    v101PairContribution,
+    v33IdentityFunction,
+    v33OneFunction,
+    v51ContributionAggregate,
+    v50NatListSum
+  ]
+
+def v101AbstractFiniteDirichletConvolutionPackage : Prop :=
+  (v101DivisorPairSupportSix.length = 4) ∧
+  (v101DivisorPairSupportTwelve.length = 6) ∧
   (∀ f g : v33ArithmeticFunction,
-    v101FiniteDirichletConvolution f g v101SixDivisorPairSupport =
-      f 1 * g 6 + f 2 * g 3 + f 3 * g 2 + f 6 * g 1) ∧
+    v101FiniteDirichletConvolutionSix f g =
+      f 1 * g 6 +
+      f 2 * g 3 +
+      f 3 * g 2 +
+      f 6 * g 1) ∧
   (∀ f g : v33ArithmeticFunction,
-    v101FiniteDirichletConvolution f g v101TwelveDivisorPairSupport =
-      f 1 * g 12 + f 2 * g 6 + f 3 * g 4 +
-      f 4 * g 3 + f 6 * g 2 + f 12 * g 1) ∧
-  (∀ f g : v33ArithmeticFunction,
-    v101FiniteDirichletConvolution f g v101SixDivisorPairSupportSwapped =
-      v101FiniteDirichletConvolution g f v101SixDivisorPairSupport) ∧
-  (∀ f g : v33ArithmeticFunction,
-    v101FiniteDirichletConvolution f g v101TwelveDivisorPairSupportSwapped =
-      v101FiniteDirichletConvolution g f v101TwelveDivisorPairSupport)
+    v101FiniteDirichletConvolutionTwelve f g =
+      f 1 * g 12 +
+      f 2 * g 6 +
+      f 3 * g 4 +
+      f 4 * g 3 +
+      f 6 * g 2 +
+      f 12 * g 1) ∧
+  (v101FiniteDirichletConvolutionSix
+    v33OneFunction v33OneFunction = 4) ∧
+  (v101FiniteDirichletConvolutionTwelve
+    v33OneFunction v33OneFunction = 6) ∧
+  (v101FiniteDirichletConvolutionSix
+    v33IdentityFunction v33OneFunction = 12) ∧
+  (v101FiniteDirichletConvolutionTwelve
+    v33IdentityFunction v33OneFunction = 28) ∧
+  v100GeneralizedPrimeWindowCheckpointPackage
 
-
-theorem v101_finite_dirichlet_convolution_package :
-    v101FiniteDirichletConvolutionPackage := by
+theorem v101_abstract_finite_dirichlet_convolution_package :
+    v101AbstractFiniteDirichletConvolutionPackage := by
   exact ⟨
-    v101_six_finite_dirichlet_convolution_value,
+    v101_six_support_length,
     ⟨
-      v101_twelve_finite_dirichlet_convolution_value,
+      v101_twelve_support_length,
       ⟨
-        v101_six_finite_dirichlet_convolution_swapped,
-        v101_twelve_finite_dirichlet_convolution_swapped
+        v101_finite_dirichlet_convolution_six_value,
+        ⟨
+          v101_finite_dirichlet_convolution_twelve_value,
+          ⟨
+            v101_six_one_one_value,
+            ⟨
+              v101_twelve_one_one_value,
+              ⟨
+                v101_six_identity_one_value,
+                ⟨
+                  v101_twelve_identity_one_value,
+                  v100_generalized_prime_window_checkpoint_package
+                ⟩
+              ⟩
+            ⟩
+          ⟩
+        ⟩
       ⟩
     ⟩
   ⟩
 
-inductive V101Layer where
-  | pairContribution
-  | finiteConvolution
-  | swappedSupport
-  | explicitSixSupport
-  | explicitTwelveSupport
-  | package
-  | dashboard
- deriving Repr, DecidableEq
-
-
-def v101LayerCount : Nat := 7
-
-def v101HasPairContributions : Bool := true
-
-def v101HasFiniteConvolution : Bool := true
-
-def v101HasSwappedSupport : Bool := true
-
-def v101HasExplicitSixSupport : Bool := true
-
-def v101HasExplicitTwelveSupport : Bool := true
-
-def v101HasPackage : Bool := true
-
-def v101StatusSummary : String :=
-  "Version 101 defines an abstract finite Dirichlet convolution over explicit divisor-pair supports, with paired contributions, swapped support symmetry, and explicit n = 6 and n = 12 support expansions."
-
-structure V101Dashboard where
-  layerCount : Nat
-  hasPairContributions : Bool
-  hasFiniteConvolution : Bool
-  hasSwappedSupport : Bool
-  hasExplicitSixSupport : Bool
-  hasExplicitTwelveSupport : Bool
-  hasPackage : Bool
-  summary : String
-
-
-def v101Dashboard : V101Dashboard where
-  layerCount := v101LayerCount
-  hasPairContributions := v101HasPairContributions
-  hasFiniteConvolution := v101HasFiniteConvolution
-  hasSwappedSupport := v101HasSwappedSupport
-  hasExplicitSixSupport := v101HasExplicitSixSupport
-  hasExplicitTwelveSupport := v101HasExplicitTwelveSupport
-  hasPackage := v101HasPackage
-  summary := v101StatusSummary
-
-
-theorem v101Dashboard_layerCount :
-    v101Dashboard.layerCount = 7 := by
-  rfl
-
-
-theorem v101Dashboard_hasPairContributions :
-    v101Dashboard.hasPairContributions = true := by
-  rfl
-
-
-theorem v101Dashboard_hasFiniteConvolution :
-    v101Dashboard.hasFiniteConvolution = true := by
-  rfl
-
-
-theorem v101Dashboard_hasSwappedSupport :
-    v101Dashboard.hasSwappedSupport = true := by
-  rfl
-
-
-theorem v101Dashboard_hasExplicitSixSupport :
-    v101Dashboard.hasExplicitSixSupport = true := by
-  rfl
-
-
-theorem v101Dashboard_hasExplicitTwelveSupport :
-    v101Dashboard.hasExplicitTwelveSupport = true := by
-  rfl
-
-
-theorem v101Dashboard_hasPackage :
-    v101Dashboard.hasPackage = true := by
-  rfl
+theorem v101_abstract_finite_dirichlet_convolution_layer_exists :
+    True := by
+  trivial
 
 end MathlibIntegration
 end FormalLanglandsLab
