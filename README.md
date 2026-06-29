@@ -1,35 +1,39 @@
 # Formal Langlands Laboratory
 
-A Lean 4 / mathlib formalization project exploring verified divisor infrastructure, arithmetic functions, controlled convolution prototypes, divisor sums, multiplicative functions, controlled Dirichlet-series / Euler-product architecture, finite Euler-product coefficient matching, and generalized finite prime-window infrastructure.
+A Lean 4 / mathlib formalization project exploring verified divisor infrastructure, arithmetic functions, controlled convolution prototypes, divisor sums, multiplicative functions, controlled finite Euler-product architecture, generalized finite prime-window infrastructure, and finite Dirichlet-convolution theory.
 
 ## Current Release
 
-**Version:** V100 Generalized Finite Prime-Window Public Checkpoint  
-**Phase:** 186  
-**Status:** Fourth public checkpoint
+**Version:** V110 Finite Dirichlet-Convolution Public Checkpoint  
+**Phase:** 196  
+**Status:** Serious number-theory upgrade checkpoint
 
-## Main V100 Package
+## Main V110 Package
 
-`v100_generalized_prime_window_checkpoint_package`
+`v110_finite_dirichlet_convolution_checkpoint_package`
 
-## What V100 Adds
+## What V110 Adds
 
-V100 packages the generalized finite prime-window arc:
+V110 packages the finite Dirichlet-convolution arc:
 
-1. generalized prime-power windows
-2. generalized two-prime product support windows
-3. expanded term lists
-4. combined coefficient lists
-5. complete-multiplicativity matching
-6. product-support collision analysis
-7. finite local-factor product prototype
-8. product-expansion bridge
-9. theorem-map registry
+1. finite Dirichlet convolution over explicit divisor-pair supports
+2. finite additivity/linearity expansions
+3. finite convolution symmetry
+4. divisor sums as convolution with the one function
+5. sigma-style finite divisor-sum operators
+6. finite divisor-sum multiplicativity bridge
+7. finite Euler-product identity from convolution
+8. theorem-map registry
+9. release-readiness registry
 10. public checkpoint registry
 
-## Verified Special Case
+## Mathematical Meaning
 
-The earlier p = 2, q = 3 Euler-product prototype is recovered as a special case of the generalized finite framework.
+The project now contains a coherent finite number-theory pipeline:
+
+`finite Dirichlet convolution → divisor sums → sigma operators → multiplicativity bridge → finite Euler-product identity`
+
+This is still finite and controlled, but it is now much more recognizable as formalized arithmetic-function theory.
 
 ## Honest Scope
 
@@ -38,9 +42,9 @@ This project does not claim:
 - Langlands reciprocity
 - infinite Euler products
 - analytic convergence
-- a general all-prime Euler product theorem
-- universal collision-freeness for all natural-number pairs
-- a fully general Dirichlet convolution over all natural numbers
+- universal Dirichlet convolution over all natural numbers
+- associativity of Dirichlet convolution for all n
+- a general all-prime Euler-product theorem
 
 The project is a serious finite Lean-verified infrastructure project, not a completed Langlands proof.
 
